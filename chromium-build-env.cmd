@@ -48,6 +48,19 @@ if not defined vs2026_install (
   echo [chromium-build-env] WARNING: Visual Studio 2026 not found, set vs2026_install manually.
 )
 
+rem Chromium pins the Windows SDK version in setup_toolchain.py; gn gen fails
+rem with an obscure traceback if that exact SDK is not installed.
+set "SDK_VERSION="
+set "SETUP_TOOLCHAIN=%CHROMIUM_ROOT%\src\build\toolchain\win\setup_toolchain.py"
+if exist "%SETUP_TOOLCHAIN%" (
+  for /f "tokens=2 delims='" %%V in ('findstr /b /c:"SDK_VERSION = " "%SETUP_TOOLCHAIN%"') do set "SDK_VERSION=%%V"
+)
+if defined SDK_VERSION if not exist "%ProgramFiles(x86)%\Windows Kits\10\Include\%SDK_VERSION%\um" (
+  echo [chromium-build-env] WARNING: Windows SDK %SDK_VERSION% required by Chromium is not installed.
+  echo [chromium-build-env]          Install it via Visual Studio Installer -^> Individual components,
+  echo [chromium-build-env]          or from https://developer.microsoft.com/windows/downloads/windows-sdk/
+)
+
 rem Print build performance summary after autoninja.
 set NINJA_SUMMARIZE_BUILD=1
 
@@ -67,6 +80,7 @@ if not "%~1"=="" (
 title Chromium build env
 echo depot_tools    : %DEPOT_TOOLS%
 echo vs2026_install : %vs2026_install%
+echo windows sdk    : %SDK_VERSION%
 echo patches        : %PATCHES_DIR%
 echo cwd            : %CD%
 cmd /k

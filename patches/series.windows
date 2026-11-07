@@ -1,0 +1,7 @@
+# Windows-only patches, applied after patches/series. See UPSTREAM.md.
+
+ungoogled-windows/ungoogled-chromium/windows/windows-disable-encryption.patch                   # [flags] portable profile
+ungoogled-windows/ungoogled-chromium/windows/windows-disable-machine-id.patch                   # [flags] no metrics machine id
+ungoogled-windows/ungoogled-chromium/windows/windows-disable-rlz.patch                          # needed by 0021-disable-rlz (setup.exe)
+ungoogled-windows/ungoogled-chromium/windows/windows-fix-building-without-safebrowsing.patch    # [sb]
+ungoogled-windows/ungoogled-chromium/windows/windows-fix-remove-unused-preferences-fields.patch # [sb]

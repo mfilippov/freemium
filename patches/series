@@ -1,0 +1,101 @@
+# Patches applied on all platforms. Upstream patches keep their upstream
+# series order so hunks touching the same files apply cleanly. See UPSTREAM.md
+# for why each upstream patch is taken or skipped.
+#
+#   ungoogled/<path>            - build/ungoogled-chromium/patches/<path>
+#   ungoogled-<platform>/<path> - build/ungoogled-chromium-<platform>/patches/<path>
+#   <path>                      - patches/<path> (ours)
+#
+# [sb]    Safe Browsing removal (safe_browsing_mode = 0), these go together.
+# [flags] ungoogled chrome://flags block: off-by-default knobs. Each patch appends
+#         to ungoogled_flag_entries.h after the previous one, so the block is
+#         taken whole and in order (a subset needs local fixups).
+
+ungoogled/upstream-fixes/missing-dependencies.patch
+ungoogled/core/inox-patchset/0001-fix-building-without-safebrowsing.patch             # [sb]
+ungoogled/core/inox-patchset/0003-disable-autofill-download-manager.patch            # telemetry
+ungoogled/core/inox-patchset/0005-disable-default-extensions.patch                   # webstore app, in-app payments ext, crx download
+ungoogled/core/inox-patchset/0015-disable-update-pings.patch                         # chrome/updater URL (mac bundle)
+ungoogled/core/inox-patchset/0021-disable-rlz.patch                                  # telemetry; needs windows-disable-rlz
+ungoogled/core/iridium-browser/safe_browsing-disable-incident-reporting.patch        # [sb] telemetry, report links -> trk:
+ungoogled/core/iridium-browser/safe_browsing-disable-reporting-of-safebrowsing-over.patch # [sb] telemetry (dead at sb=0)
+ungoogled/core/ungoogled-chromium/disable-crash-reporter.patch                       # telemetry
+ungoogled/core/ungoogled-chromium/disable-google-host-detection.patch                # google services
+ungoogled/core/ungoogled-chromium/replace-google-search-engine-with-nosearch.patch   # default search
+ungoogled/core/ungoogled-chromium/toggle-translation-via-switch.patch                # google services
+ungoogled/core/ungoogled-chromium/disable-untraceable-urls.patch                     # telemetry, rlz ping host
+ungoogled/core/ungoogled-chromium/disable-profile-avatar-downloading.patch           # google services
+ungoogled/core/ungoogled-chromium/disable-gcm.patch                                  # sign-in / push
+ungoogled/core/ungoogled-chromium/disable-domain-reliability.patch                   # telemetry
+ungoogled/core/ungoogled-chromium/block-trk-and-subdomains.patch                     # safety net: trk:/qjz9zk blocked at net layer
+ungoogled/core/ungoogled-chromium/disable-gaia.patch                                 # sign-in
+ungoogled/core/ungoogled-chromium/disable-fonts-googleapis-references.patch          # google services
+ungoogled/core/ungoogled-chromium/disable-webstore-urls.patch                        # extension auto-update, webstore URLs
+ungoogled/core/ungoogled-chromium/disable-webrtc-log-uploader.patch                  # telemetry
+ungoogled/core/ungoogled-chromium/disable-ai.patch                                   # AI
+ungoogled/core/ungoogled-chromium/disable-network-time-tracker.patch                 # google services
+ungoogled/core/ungoogled-chromium/disable-mei-preload.patch                          # bundled Google MEI preload blob
+ungoogled/core/ungoogled-chromium/fix-building-without-safebrowsing.patch            # [sb]
+ungoogled/core/ungoogled-chromium/remove-unused-preferences-fields.patch             # [sb] + sign-in prefs
+ungoogled/core/ungoogled-chromium/block-requests.patch                               # google services, component updater
+ungoogled/core/ungoogled-chromium/disable-privacy-sandbox.patch                      # attestations preload (mac bundle)
+ungoogled/core/ungoogled-chromium/doh-changes.patch                                  # secure DNS off by default, no Google DoH
+ungoogled/core/ungoogled-chromium/remove-f1-shortcut.patch                           # F1 -> support.google.com
+ungoogled/core/ungoogled-chromium/move-js-optimizer-unfamiliar-sites.patch           # [sb]
+ungoogled/core/ungoogled-chromium/remove-navigation-source-param.patch               # telemetry
+ungoogled/core/bromite/disable-fetching-field-trials.patch                           # telemetry
+ungoogled/extra/ungoogled-chromium/add-ungoogled-flag-headers.patch                  # [flags] infrastructure
+ungoogled/extra/inox-patchset/0006-modify-default-prefs.patch                        # defaults, password manager off
+ungoogled/extra/inox-patchset/0008-restore-classic-ntp.patch                         # no remote NTP
+ungoogled/extra/inox-patchset/0013-disable-missing-key-warning.patch                 # no API key infobar (delegate half)
+ungoogled/extra/inox-patchset/0019-disable-battery-status-service.patch              # fingerprinting
+ungoogled/extra/debian/disable/google-api-warning.patch                              # no API key infobar
+ungoogled/extra/iridium-browser/updater-disable-auto-update.patch                    # Keystone (mac file, harmless elsewhere)
+ungoogled/extra/iridium-browser/browser-disable-profile-auto-import-on-first-run.patch # no silent first-run import
+ungoogled/extra/bromite/fingerprinting-flags-client-rects-and-measuretext.patch      # [flags] fingerprinting
+ungoogled/extra/bromite/flag-max-connections-per-host.patch                          # [flags] chain member
+ungoogled/extra/bromite/flag-fingerprinting-canvas-image-data-noise.patch            # [flags] fingerprinting
+ungoogled/extra/ungoogled-chromium/add-components-ungoogled.patch                    # [flags] switch constants
+ungoogled/extra/ungoogled-chromium/add-ipv6-probing-option.patch                     # no IPv6 probe to Google DNS (+ flag)
+ungoogled/extra/ungoogled-chromium/disable-intranet-redirect-detector.patch          # startup requests
+ungoogled/extra/ungoogled-chromium/add-flag-to-configure-extension-downloading.patch # [flags]
+ungoogled/extra/ungoogled-chromium/add-flag-for-search-engine-collection.patch       # [flags] no OpenSearch auto-collection
+ungoogled/extra/ungoogled-chromium/add-flag-to-disable-beforeunload.patch            # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-force-punycode-hostnames.patch        # [flags] security
+ungoogled/extra/ungoogled-chromium/add-flag-to-show-avatar-button.patch              # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-hide-crashed-bubble.patch             # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-scroll-tabs.patch                     # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-for-bookmark-bar-ntp.patch               # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-for-omnibox-autocomplete-filtering.patch # [flags] privacy
+ungoogled/extra/ungoogled-chromium/disable-dial-repeating-discovery.patch            # periodic SSDP multicast
+ungoogled/extra/ungoogled-chromium/remove-uneeded-ui.patch                           # sign-in / AI / Google UI
+ungoogled/extra/ungoogled-chromium/add-flag-to-close-window-with-last-tab.patch      # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-convert-popups-to-tabs.patch          # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-disable-local-history-expiration.patch # [flags] ui
+ungoogled/extra/ungoogled-chromium/prepopulated-search-engines.patch                 # AI omnibox shortcut
+ungoogled/extra/ungoogled-chromium/add-flag-to-clear-data-on-exit.patch              # [flags] privacy
+ungoogled/extra/ungoogled-chromium/add-flag-for-qr-generator.patch                   # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-for-grab-handle.patch                    # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-for-close-confirmation.patch             # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-for-custom-ntp.patch                     # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-for-tab-hover-cards.patch                # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-hide-tab-close-buttons.patch          # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-disable-tls-grease.patch              # [flags] fingerprinting
+ungoogled/extra/ungoogled-chromium/add-flag-to-change-http-accept-header.patch       # [flags] fingerprinting
+ungoogled/extra/ungoogled-chromium/add-flag-for-disabling-link-drag.patch            # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-hide-extensions-menu.patch            # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-to-hide-fullscreen-exit-ui.patch         # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flag-for-incognito-themes.patch               # [flags] ui
+ungoogled/extra/ungoogled-chromium/add-flags-for-referrer-customization.patch        # [flags] privacy
+ungoogled/extra/ungoogled-chromium/default-webrtc-ip-handling-policy.patch           # default: disable_non_proxied_udp
+ungoogled/extra/ungoogled-chromium/add-flags-for-existing-switches.patch             # flags for existing switches (webrtc policy knob)
+ungoogled/extra/ungoogled-chromium/add-flag-to-reduce-system-info.patch              # [flags] fingerprinting
+ungoogled/extra/ungoogled-chromium/add-flag-to-remove-client-hints.patch             # [flags] fingerprinting
+ungoogled/extra/ungoogled-chromium/enable-certificate-transparency-and-add-flag.patch # [flags] CT (inert once log list is stale)
+ungoogled/extra/ungoogled-chromium/add-flag-to-spoof-webgl-renderer-info.patch       # [flags] fingerprinting
+ungoogled/extra/ungoogled-chromium/add-flag-to-increase-incognito-storage-quota.patch # [flags] ui
+ungoogled/extra/ungoogled-chromium/disable-ai-search-shortcuts.patch                 # AI omnibox shortcuts
+ungoogled/extra/ungoogled-chromium/disable-fedcm-by-default.patch                    # no IdP fetches without opt-in
+ungoogled/extra/ungoogled-chromium/bundle-hyphenation-patterns.patch                 # needed: component updater blocked
+ungoogled/extra/ungoogled-chromium/add-flag-for-disabling-jit.patch                  # [flags] security; enables v8_enable_drumbrake (see args)
+ungoogled/extra/ungoogled-chromium/add-flag-to-hide-window-buttons.patch             # [flags] ui

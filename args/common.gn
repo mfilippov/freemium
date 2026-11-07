@@ -1,0 +1,52 @@
+# GN args for all platforms. apply-patches.py --args concatenates this file
+# with args/<platform>.gn into out/<dir>/args.gn.
+
+# No Google API keys: sign-in, sync, Safe Browsing, Translate etc. cannot
+# reach Google even where code remains.
+google_api_key = ""
+google_default_client_id = ""
+google_default_client_secret = ""
+use_official_google_api_keys = false
+
+# Safe Browsing is compiled out (needs the Safe Browsing patches in series).
+safe_browsing_mode = 0
+
+# No built-in field trial configs; seed fetching is patched out separately.
+disable_fieldtrial_testing_config = true
+
+# Reporting API / Network Error Logging uploads.
+enable_reporting = false
+
+# Chrome Remote Desktop host and the Google Meet ("hangout services") extension.
+enable_remoting = false
+enable_hangout_services_extension = false
+
+# Gemini Nano on-device model service; pairs with disable-ai.patch.
+use_on_device_model_service = false
+
+# Release build.
+is_official_build = true
+is_debug = false
+is_component_build = false
+dcheck_always_on = false
+# PGO profiles are not fetched by our gclient config.
+chrome_pgo_phase = 0
+symbol_level = 0
+blink_symbol_level = 0
+v8_symbol_level = 0
+
+# Media.
+proprietary_codecs = true
+ffmpeg_branding = "Chrome"
+enable_widevine = true
+
+# From ungoogled-chromium flags.gn. Its patches are not warning-clean (e.g.
+# disable-ai.patch leaves MaySendTraffic unused), so warnings must not fail the build.
+treat_warnings_as_errors=false
+# No mDNS / local network device discovery (Cast, printers).
+enable_mdns=false
+enable_service_discovery=false
+clang_use_chrome_plugins=false
+exclude_unwind_tables=true
+use_unofficial_version_number=false
+v8_drumbrake_bounds_checks=true

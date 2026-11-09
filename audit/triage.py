@@ -45,6 +45,33 @@ SCHEMA = {
     'additionalProperties': False,
 }
 
+FEATURE_CATEGORIES = ['ai', 'google_service', 'signin_sync', 'promo_iph', 'ads_tracking',
+                      'telemetry', 'ui', 'privacy_security', 'web_platform', 'performance',
+                      'internal', 'other']
+FEATURE_SCHEMA = {
+    'type': 'object',
+    'properties': {
+        'analysis': {'type': 'string', 'maxLength': 600},
+        'category': {'enum': FEATURE_CATEGORIES},
+        'user_visible': {'enum': ['yes', 'no', 'unclear']},
+        'google_dependency': {'enum': ['yes', 'no', 'unclear']},
+        'recommendation': {'enum': ['disable', 'keep', 'unclear']},
+        'reason': {'type': 'string', 'maxLength': 200},
+        'confidence': {'enum': ['low', 'medium', 'high']},
+    },
+    'required': ['analysis', 'category', 'user_visible', 'google_dependency',
+                 'recommendation', 'reason', 'confidence'],
+    'additionalProperties': False,
+}
+
+# Each track: its own prompt, answer schema, candidates and findings files.
+TRACKS = {
+    'network': {'prompt': 'prompt.md', 'schema': SCHEMA, 'candidates': 'candidates.jsonl',
+                'out': '{model}.jsonl'},
+    'features': {'prompt': 'prompt-features.md', 'schema': FEATURE_SCHEMA,
+                 'candidates': 'features-candidates.jsonl', 'out': 'features-{model}.jsonl'},
+}
+
 
 def load_profile(name):
     config = tomllib.loads((AUDIT / 'models.toml').read_text(encoding='utf-8'))
@@ -72,37 +99,37 @@ def semantic_args(args):
     return out
 
 
-def cache_key(profile, prompt):
+def cache_key(profile, prompt, schema=SCHEMA):
     """Identifies what a verdict depends on besides the candidate context."""
-    parts = [profile['file'], profile.get('request', {}), prompt, SCHEMA,
+    parts = [profile['file'], profile.get('request', {}), prompt, schema,
              semantic_args(profile.get('args', [])), profile.get('grammar', True)]
     return sha(json.dumps(parts, sort_keys=True))
 
 
-def system_prompt(profile, prompt):
+def system_prompt(profile, prompt, schema=SCHEMA):
     """Without grammar the schema is spelled out in the prompt instead."""
     if profile.get('grammar', True):
         return prompt
     fields = '\n'.join(f'  "{k}": ' + (' | '.join(f'"{v}"' for v in spec['enum']) if 'enum' in spec
                                       else f'string (max {spec["maxLength"]} chars)')
-                       for k, spec in SCHEMA['properties'].items())
+                       for k, spec in schema['properties'].items())
     return (prompt + '\nOUTPUT FORMAT: a single JSON object with exactly these keys, in this '
             'order, and nothing else (no markdown fences):\n{\n' + fields + '\n}\n')
 
 
-def parse_verdict(content):
+def parse_verdict(content, schema=SCHEMA):
     """Strictly validates a verdict produced without grammar; raises on any deviation
     so the request is retried."""
     start, end = content.find('{'), content.rfind('}')
     verdict = json.loads(content[start:end + 1])
     if not isinstance(verdict, dict):
         raise ValueError(f'not an object: {type(verdict).__name__}')
-    for k, spec in SCHEMA['properties'].items():
+    for k, spec in schema['properties'].items():
         value = verdict.get(k)
         if not isinstance(value, str) or ('enum' in spec and value not in spec['enum']):
             raise ValueError(f'bad field {k}: {str(value)[:50]}')
         verdict[k] = value[:spec.get('maxLength', len(value))]
-    return {k: verdict[k] for k in SCHEMA['properties']}
+    return {k: verdict[k] for k in schema['properties']}
 
 
 def load_cache(key):
@@ -114,10 +141,10 @@ def load_cache(key):
     return cache
 
 
-def ask(server, profile, prompt, cand, timeout):
+def ask(server, profile, prompt, cand, timeout, schema=SCHEMA):
     grammar = profile.get('grammar', True)
     body = {
-        'messages': [{'role': 'system', 'content': system_prompt(profile, prompt)},
+        'messages': [{'role': 'system', 'content': system_prompt(profile, prompt, schema)},
                      {'role': 'user', 'content': cand['context']}],
         'max_tokens': 8000,   # thinking models need room before the JSON
         **profile.get('request', {}),
@@ -126,7 +153,7 @@ def ask(server, profile, prompt, cand, timeout):
     # it the server can sample on the GPU (backend_sampling), see models.toml.
     if grammar:
         body['response_format'] = {'type': 'json_schema', 'json_schema': {
-            'name': 'verdict', 'strict': True, 'schema': SCHEMA}}
+            'name': 'verdict', 'strict': True, 'schema': schema}}
     req = urllib.request.Request(f'{server}/v1/chat/completions', data=json.dumps(body).encode(),
                                  headers={'Content-Type': 'application/json'})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -135,20 +162,21 @@ def ask(server, profile, prompt, cand, timeout):
     if grammar:
         return json.loads(content), data.get('usage', {})
     try:
-        return parse_verdict(content), data.get('usage', {})
+        return parse_verdict(content, schema), data.get('usage', {})
     except ValueError:
         # ~1% of free-form answers are invalid JSON (unescaped quotes in quoted
         # code) and greedy retries repeat them: redo this one request with the
         # grammar, which requires CPU sampling for it.
         return ask(server, {**profile, 'grammar': True,
                             'request': {**profile.get('request', {}), 'backend_sampling': False}},
-                   prompt, cand, timeout)
+                   prompt, cand, timeout, schema)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--model', required=True, help='profile from models.toml')
+    parser.add_argument('--track', choices=TRACKS, default='network')
     parser.add_argument('--candidates', type=Path)
     parser.add_argument('--out', type=Path)
     parser.add_argument('--server', default='http://127.0.0.1:8080')
@@ -165,9 +193,11 @@ def main():
 
     version = chromium_version()
     profile = load_profile(opts.model)
-    prompt = (AUDIT / 'prompt.md').read_text(encoding='utf-8')
-    key = cache_key(profile, prompt)
-    cands = read_jsonl(opts.candidates or WORK / version / 'candidates.jsonl')[:opts.limit]
+    track = TRACKS[opts.track]
+    schema = track['schema']
+    prompt = (AUDIT / track['prompt']).read_text(encoding='utf-8')
+    key = cache_key(profile, prompt, schema)
+    cands = read_jsonl(opts.candidates or WORK / version / track['candidates'])[:opts.limit]
     if opts.after:
         cleared_verdicts = set(opts.cleared.split(','))
         cleared = {r['context_hash'] for r in read_jsonl(opts.after)
@@ -176,7 +206,7 @@ def main():
         cands = [c for c in cands if c['context_hash'] not in cleared]
         print(f'stage 2: {before - len(cands)} of {before} cleared by {opts.after.name}',
               flush=True)
-    out = opts.out or FINDINGS / version / f'{opts.model}.jsonl'
+    out = opts.out or FINDINGS / version / track['out'].format(model=opts.model)
     out.parent.mkdir(parents=True, exist_ok=True)
 
     # Resume by (id, context_hash): a candidate whose code changed (e.g. after a new
@@ -212,7 +242,7 @@ def main():
             start = time.time()
             for attempt in range(3):
                 try:
-                    verdict, usage = ask(opts.server, profile, prompt, c, opts.timeout)
+                    verdict, usage = ask(opts.server, profile, prompt, c, opts.timeout, schema)
                     break
                 except Exception as e:      # bad JSON, timeout, server restart
                     error = f'{type(e).__name__}: {e}'

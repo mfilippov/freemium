@@ -51,6 +51,22 @@ python audit/report.py --model gemma4-fast
 Then for each report item: write a patch and record `patched`, or record
 `accepted` / `false_positive` in `decisions.toml`.
 
+## Features track
+
+A separate question with its own prompt (`prompt-features.md`): which
+`base::Feature`s enabled by default (AI, Google services, sign-in/sync promos,
+IPH/promos, ads/tracking APIs, telemetry) should be turned off.
+
+```
+python audit/features.py extract
+python audit/triage.py --track features --model gemma4-fast
+python audit/features.py report --model gemma4-fast
+```
+
+Context per flag: definition, declaration comment, chrome://flags text, use
+sites. Decisions go to `features-decisions.toml`; flags to turn off go into
+one consolidated defaults patch.
+
 ## Choosing or changing a model or the prompt
 
 `eval.py build` labels candidates in the pristine tag: positives are code that

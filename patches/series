@@ -99,3 +99,6 @@ ungoogled/extra/ungoogled-chromium/disable-fedcm-by-default.patch               
 ungoogled/extra/ungoogled-chromium/bundle-hyphenation-patterns.patch                 # needed: component updater blocked
 ungoogled/extra/ungoogled-chromium/add-flag-for-disabling-jit.patch                  # [flags] security; enables v8_enable_drumbrake (see args)
 ungoogled/extra/ungoogled-chromium/add-flag-to-hide-window-buttons.patch             # [flags] ui
+
+# Own patches
+own/os-dns-and-no-system-proxy.patch

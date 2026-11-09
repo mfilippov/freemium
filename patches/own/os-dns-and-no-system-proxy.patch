@@ -1,0 +1,80 @@
+Resolve names only through the OS and ignore the OS proxy settings.
+
+- DNS: the built-in DNS client and browser-level DNS over HTTPS are off, so the
+  OS resolver (and its own DoH settings) handles every lookup; the Secure DNS
+  setting is hidden.
+- Proxy: the OS proxy configuration (and with it WPAD/PAC auto-detection) is
+  not read; connections are direct unless a proxy comes from the command line,
+  a policy or an extension. The settings row that opens the OS proxy settings is
+  hidden (it stays when a policy or an extension sets a proxy).
+--- a/chrome/browser/net/proxy_service_factory.cc
++++ b/chrome/browser/net/proxy_service_factory.cc
+@@ -42,8 +42,10 @@
+   // configuration in case nothing is configured through prefs (Note: prefs
+   // include command line and configuration policy).
+ 
+-  base_service = net::ProxyConfigService::CreateSystemProxyConfigService(
+-      base::SingleThreadTaskRunner::GetCurrentDefault());
++  // The OS proxy settings are ignored: without prefs (command line, policy,
++  // extension) connections are direct, so there are no WPAD/PAC lookups.
++  // base_service = net::ProxyConfigService::CreateSystemProxyConfigService(
++  //     base::SingleThreadTaskRunner::GetCurrentDefault());
+ #endif  // !BUILDFLAG(IS_CHROMEOS)
+ 
+   return tracker->CreateTrackingProxyConfigService(std::move(base_service));
+--- a/chrome/browser/net/stub_resolver_config_reader.cc
++++ b/chrome/browser/net/stub_resolver_config_reader.cc
+@@ -118,6 +118,11 @@
+ // Check the AsyncDns field trial and return true if it should be enabled. On
+ // Android this includes checking the Android version in the field trial.
+ bool ShouldEnableAsyncDns() {
++  // Always resolve through the OS resolver, so system DNS settings (including
++  // the OS's own DNS over HTTPS) apply.
++  if ((true)) {
++    return false;
++  }
+ #if BUILDFLAG(IS_WIN)
+   // On Windows if Zero Trust DNS is enabled on current device,
+   // we should not use built-in resolver (async dns). It should
+@@ -423,6 +428,10 @@
+     parental_controls_checked_ = true;
+   }
+ 
++  // No DNS over HTTPS in the browser: secure DNS is left to the OS resolver,
++  // whatever the prefs or policies say.
++  secure_dns_mode = net::SecureDnsMode::kOff;
++
+   bool additional_dns_query_types_enabled =
+       local_state_->GetBoolean(prefs::kAdditionalDnsQueryTypesEnabled);
+ 
+--- a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
++++ b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+@@ -2893,7 +2893,8 @@
+   // the new Settings UI, which can be used by the settings-toggle-button.
+ 
+   bool link_secure_dns = ShouldLinkSecureDnsOsSettings();
+-  html_source->AddBoolean("showSecureDnsSetting", !link_secure_dns);
++  // Secure DNS is configured in the OS, not in the browser.
++  html_source->AddBoolean("showSecureDnsSetting", false);
+ #if BUILDFLAG(IS_CHROMEOS)
+   html_source->AddBoolean("showSecureDnsSettingLink", link_secure_dns);
+   html_source->AddString(
+--- a/chrome/browser/resources/settings/system_page/system_page.html.ts
++++ b/chrome/browser/resources/settings/system_page/system_page.html.ts
+@@ -58,6 +58,7 @@
+ </if>
+ 
+   <div id="proxy" class="cr-row" @click="${this.onProxyClick_}"
++      ?hidden="${this.isProxyDefault_}"
+       ?actionable="${this.isProxyDefault_}">
+     <div id="proxy-single-source-container"
+         ?hidden="${this.isProxyEnforcedByMultipleSources_}">
+@@ -89,7 +90,7 @@
+   <div id="proxyMultipleSources"
+       ?hidden="${!this.isProxyEnforcedByMultipleSources_}">
+     <div id="proxyDeviceSettings" class="cr-row continuation"
+-        ?hidden="${!this.isProxyDefault_}" @click="${this.onProxyClick_}"
++        hidden @click="${this.onProxyClick_}"
+         ?actionable="${this.isProxyDefault_}">
+       <div class="flex cr-row-text proxy-multisource-padding">
+         $i18n{proxySettingsYourDevice}

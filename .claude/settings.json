@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git grep *)",
+      "PowerShell(Select-Object *)",
+      "PowerShell(Select *)",
+      "PowerShell(Select-String *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Get-ChildItem)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(Format-Table *)",
+      "PowerShell(Format-Table)",
+      "Bash(env)",
+      "Bash(tasklist *)",
+      "Bash(tasklist)"
+    ]
+  }
+}

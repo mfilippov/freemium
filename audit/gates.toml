@@ -1,0 +1,301 @@
+# Gates verified in code that keep whole mechanisms off in this build.
+#
+# extract.py adds `text` to the context of every candidate whose file starts
+# with one of `paths`, so one verification clears a whole class of findings.
+# Sources: a verifier pass (findings/<version>/verify.jsonl) or reading by hand.
+#
+# `closes` (optional regex on candidate ids): report.py --hide-gated hides those
+# items whatever the model said; without it the fact only informs the model.
+#
+# `not_built` lists files whose absence from the build graph the gate relies on.
+#
+# On a new Chromium version, re-check the cited lines (`check` lists
+# path:needle pairs; extract.py fails if a needle is no longer in that file).
+
+[[gate]]
+paths = ["components/optimization_guide/core/model_execution/"]
+check = ["components/optimization_guide/core/model_execution/model_execution_fetcher_impl.cc:IsAccessTokenRequiredForFeature(feature) && access_token.empty()",
+         "components/optimization_guide/core/access_token_helper.cc:HasPrimaryAccount(signin::ConsentLevel::kSignin)"]
+text = """Remote model execution (ModelExecutionFetcherImpl, model_execution_fetcher_impl.cc:108)
+does not send when IsAccessTokenRequiredForFeature(feature) is true and the access token is
+empty; the token is empty without a signed-in account (access_token_helper.cc:69), which is
+always the case in this build. Features that do NOT need a token (remote_model_execution_common.cc
+IsAccessTokenRequiredForFeature): kScamDetection, kGeminiAntiscamProtection, kAmountExtraction,
+kCardRecommendations, and kFormsClassifications / kPasswordChangeSubmission only if their
+bypass feature is enabled. Requests for those are judged by their callers."""
+closes = '^ann:(?!(amount_extraction|forms_classifications|gemini_antiscam_protection|password_change_submission|scam_detection)_)\w+_model_execution$'
+source = "fable verifier 2026-11-07, re-read by hand"
+
+[[gate]]
+paths = ["components/optimization_guide/core/hints/", "components/optimization_guide/core/delivery/"]
+check = ["components/optimization_guide/core/optimization_guide_permissions_util.cc:google_apis::HasAPIKeyConfigured()",
+         "components/optimization_guide/core/delivery/prediction_model_download_manager.cc:google_apis::HasAPIKeyConfigured()"]
+text = """Optimization guide hints and prediction model fetches require
+google_apis::HasAPIKeyConfigured() (optimization_guide_permissions_util.cc:49,
+prediction_model_download_manager.cc:214 ShouldFetchModels), which is false in this build."""
+closes = '.'
+source = "fable verifier 2026-11-07, re-read by hand"
+
+[[gate]]
+paths = ["components/optimization_guide/core/model_quality/",
+         "chrome/browser/optimization_guide/chrome_model_quality_logs_uploader_service.cc"]
+check = ["chrome/browser/optimization_guide/chrome_model_quality_logs_uploader_service.cc:IsMetricsConsentGiven()"]
+text = """Model quality log upload requires IsMetricsConsentGiven()
+(chrome_model_quality_logs_uploader_service.cc:79), which is always false in this build (see
+the metrics fact in the prompt)."""
+closes = '.'
+source = "fable verifier 2026-11-07, re-read by hand"
+
+[[gate]]
+paths = ["components/metrics/net/"]
+check = ["components/metrics/metrics_service_accessor.cc:#if BUILDFLAG(GOOGLE_CHROME_BRANDING)",
+         "components/metrics/metrics_service_accessor.cc:// In non-official builds, disable metrics reporting completely.",
+         "chrome/browser/metrics/chrome_metrics_services_manager_client.cc:return ChromeMetricsServiceAccessor::IsMetricsAndCrashReportingEnabled(",
+         "components/metrics_services_manager/metrics_services_manager.cc:metrics->Stop();"]
+text = """UMA/UKM/DWA/private metrics uploads need metrics consent: ChromeEnabledStateProvider::IsConsentGiven
+-> ChromeMetricsServiceAccessor::IsMetricsAndCrashReportingEnabled -> MetricsServiceAccessor::
+IsMetricsReportingEnabled, which returns false in non-GOOGLE_CHROME_BRANDING builds
+(metrics_service_accessor.cc:41-46). Without it MetricsServicesManager::UpdateRunningServices
+stops the metrics service and disables UKM recording and reporting."""
+closes = '^ann:(metrics_report_|private_metrics)'
+source = "read by hand 2026-11-07"
+
+[[gate]]
+paths = ["components/safe_browsing/core/browser/db/", "components/safe_browsing/core/browser/realtime/",
+         "components/safe_browsing/core/browser/hashprefix_realtime/",
+         "components/safe_browsing/core/browser/ping_manager.cc",
+         "components/safe_browsing/core/common/features.cc"]
+not_built = ["chrome/browser/safe_browsing/safe_browsing_service.cc",
+             "chrome/browser/safe_browsing/services_delegate_desktop.cc",
+             "chrome/browser/safe_browsing/v5_get_hash_protocol_manager_factory.cc",
+             "chrome/browser/safe_browsing/hash_realtime_service_factory.cc",
+             "chrome/browser/safe_browsing/real_time_url_lookup_service_factory.cc",
+             "chrome/browser/safe_browsing/chrome_enterprise_url_lookup_service_factory.cc",
+             "chrome/browser/safe_browsing/chrome_ping_manager_factory.cc"]
+text = """safe_browsing_mode=0: the Safe Browsing request managers here (V4/V5 update and get-hash,
+real-time URL and hash-prefix lookups, ping manager) are compiled as library code but only
+created by chrome/browser/safe_browsing/ (SafeBrowsingService, ServicesDelegateDesktop and the
+service factories), which is not built, so they are never instantiated."""
+closes = '.'
+source = "read by hand 2026-11-07 (creators via git grep, build graph out/Release)"
+
+[[gate]]
+paths = ["components/data_sharing/internal/", "components/endpoint_fetcher/"]
+check = ["components/endpoint_fetcher/endpoint_fetcher.cc:if (!identity_manager_->HasPrimaryAccount(",
+         "components/data_sharing/internal/data_sharing_network_loader_impl.cc:.SetConsentLevel(signin::ConsentLevel::kSignin)"]
+text = """Data sharing (shared tab groups / collaboration) requests go through an OAuth EndpointFetcher
+built with ConsentLevel::kSignin (data_sharing_network_loader_impl.cc:368-373). EndpointFetcher
+returns kAuthError without sending when there is no primary account (endpoint_fetcher.cc:146-155),
+always the case in this build. Avatar images are only requested for members of groups obtained
+through that loader."""
+closes = '^ann:data_sharing_'
+source = "fable verifier batch2 2026-11-07"
+
+[[gate]]
+paths = ["components/signin/internal/identity_manager/", "components/signin/core/browser/"]
+check = ["components/signin/internal/identity_manager/account_fetcher_service.cc:for (const auto& account : token_service_->GetAccounts())",
+         "components/signin/core/browser/account_preview_data_service_impl.cc:CHECK(identity_manager_->AreRefreshTokensLoaded());"]
+text = """Account info/image fetches (AccountFetcherService, account_fetcher_service.cc:150-153, 410-425)
+and sync preview fetches (AccountPreviewDataServiceImpl::FetchAccountPreviewData,
+account_preview_data_service_impl.cc:692-699) run only for accounts with a refresh token and send
+OAuth2 access tokens; no Google sign-in or refresh tokens are possible in this build."""
+closes = '^ann:(accounts_image_fetcher|chrome_sync_preview_fetcher)'
+source = "fable verifier batch2 2026-11-07"
+
+[[gate]]
+paths = ["chrome/common/chrome_features.cc", "chrome/browser/glic/"]
+check = ["chrome/browser/glic/public/glic_enabling.cc:result.primary_account_is_capable = false;",
+         "chrome/common/chrome_features.cc:BASE_FEATURE(kGlicWarming, base::FEATURE_DISABLED_BY_DEFAULT);"]
+text = """Glic (Gemini in Chrome): kGlic is enabled by default on Windows, but ProfileEnablement::IsEnabled
+(glic_enabling.cc:679-686) requires primary_account_is_capable, false without a primary account
+(glic_enabling.cc:457-462), so never in this build. The guest page (kGlicGuestURL) loads only when
+the user opens the panel or by warming, which is off (kGlicWarming disabled). Glic FeatureParam
+strings in chrome_features.cc are help links or origin allowlists, not fetched."""
+closes = '^(fn|url):chrome/common/chrome_features\.cc:.*(gemini|glic|Glic|GLIC)'
+source = "fable verifier batch2 2026-11-07"
+
+[[gate]]
+paths = ["google_apis/gaia/", "components/signin/", "components/sync/", "components/commerce/",
+         "components/wallet/", "components/personal_context/",
+         "components/favicon/core/history_ui_favicon_request_handler_impl.cc",
+         "components/one_time_tokens/", "components/trusted_vault/", "device/fido/enclave/"]
+check = ["google_apis/gaia/gaia_auth_fetcher.cc:DCHECK(!fetch_pending_) << \"Tried to fetch two things at once!\";",
+         "components/sync/service/sync_service_impl.cc:DISABLE_REASON_NOT_SIGNED_IN"]
+text = """No Google account can exist in this build: google_api_key is empty (HasAPIKeyConfigured() false)
+and the disable-gaia patch emptied GaiaAuthFetcher::CreateAndStartGaiaFetcher (gaia_auth_fetcher.cc:244-252),
+so no Gaia request is sent and no refresh or access token can be obtained. Everything that needs a primary
+account or an OAuth access token (sync engine: sync_service_impl.cc DISABLE_REASON_NOT_SIGNED_IN; OAuth
+EndpointFetcher; PrimaryAccountAccessTokenFetcher users; history-sync-gated favicon server fetches) is dead."""
+closes = '^ann:(gaia_\w+|sync_\w+|wallet_http_request|chrome_commerce_subscriptions_\w+|ambient_autofill_request|fetch_email_one_time_token|fetch_user_data_processing_consent|trusted_vault_cert_request|autofill_image_fetcher)$'
+source = "fable verifier batch3 2026-11-08, needles re-checked"
+
+[[gate]]
+paths = ["google_apis/gcm/", "components/gcm_driver/", "chrome/browser/gcm/"]
+check = ["components/gcm_driver/gcm_driver_desktop.cc:return GCMClient::GCM_DISABLED;",
+         "components/gcm_driver/gcm_client_impl.cc:if ((true)) return;"]
+text = """disable-gcm patch: GCMDriverDesktop::EnsureStarted returns GCM_DISABLED and GCMClientImpl::Start,
+StartCheckin, SchedulePeriodicCheckin and InitializeMCSClient are emptied, so check-in, registration and the
+MCS connection never happen; push/FCM/InstanceID consumers fail before any request."""
+closes = '^ann:gcm_\w+$'
+source = "fable verifier batch3 2026-11-08, needles re-checked"
+
+[[gate]]
+paths = ["components/omnibox/browser/search_provider.cc", "components/omnibox/browser/zero_suggest_provider.cc",
+         "components/omnibox/browser/remote_suggestions_service.cc",
+         "components/omnibox/browser/base_search_provider.cc"]
+check = ["chrome/browser/profiles/profile.cc:prefs::kSearchSuggestEnabled,",
+         "components/omnibox/browser/base_search_provider.cc:if (!client->SearchSuggestEnabled() &&"]
+text = """Search suggestions are off by default (patched kSearchSuggestEnabled=false, chrome/browser/profiles/profile.cc
+RegisterProfilePrefs) and BaseSearchProvider::CanSendSuggestRequest returns false without it. The nosearch patch
+removed the Google engine and its suggest_url, and zero-suggest with the page URL needs TemplateURLIsGoogle.
+Remote suggest requests only happen after the user enables suggestions, and then only while typing."""
+closes = '^ann:omnibox_(suggest|zerosuggest)$'
+source = "fable verifier batch3 2026-11-08, needles re-checked"
+
+[[gate]]
+paths = ["components/policy/content/safe_search_service.cc", "components/policy/content/safe_sites_navigation_throttle.cc",
+         "components/safe_search_api/", "components/policy/core/common/cloud/",
+         "components/enterprise/connectors/", "chrome/browser/enterprise/connectors/"]
+check = ["components/policy/core/browser/url_list/url_blocklist_manager.cc:SafeSitesFilterBehavior::kSafeSitesFilterDisabled",
+         "components/enterprise/browser/controller/chrome_browser_cloud_management_controller.cc:(enrollment_token.empty() && dm_token.is_empty())"]
+text = """Enterprise-policy-only mechanisms: SafeSites URL classification runs only when the SafeSitesFilterBehavior
+policy is set (default kSafeSitesFilterDisabled, url_blocklist_manager.cc), and the DM server and enterprise
+connectors (DLP scans, reporting) need CBCM enrollment, refused without an enrollment or DM token
+(chrome_browser_cloud_management_controller.cc). No policies are configured in this build."""
+closes = '^(ann:(safe_search_service|device_management_\w+)|const:components/safe_search_api/.*|const:components/enterprise/connectors/.*)$'
+source = "fable verifier batch3 2026-11-08, needles re-checked"
+
+[[gate]]
+paths = ["net/dns/public/doh_provider_entry.cc", "net/dns/dns_client.cc", "chrome/browser/net/secure_dns_"]
+check = ["chrome/browser/net/default_dns_over_https_config_source.cc:net::SecureDnsMode::kOff)));"]
+text = """doh-changes patch: the default Secure DNS mode is kOff (default_dns_over_https_config_source.cc:30-32), so
+automatic upgrade of system resolvers to a DohProviderEntry endpoint and DoH probes never run unless the user
+enables Secure DNS in settings."""
+closes = '^url:net/dns/public/doh_provider_entry\.cc:'
+source = "fable verifier batch3 2026-11-08, needles re-checked"
+
+[[gate]]
+paths = ["chrome/browser/ui/webui/new_tab_page/", "chrome/browser/new_tab_page/",
+         "chrome/browser/ui/webui/side_panel/customize_chrome/", "chrome/browser/search/background/",
+         "components/themes/"]
+check = ["chrome/browser/search/search.cc:: GURL(chrome::kChromeUINewTabPageThirdPartyURL));",
+         "chrome/browser/search/search.cc:return NewTabURLDetails(local_url, NEW_TAB_URL_VALID);"]
+text = """The default New Tab Page in this build is chrome://new-tab-page-third-party: NewTabURLDetails::ForProfile
+(chrome/browser/search/search.cc) picks it whenever DefaultSearchProviderIsGoogle is false, and the Google engine
+is removed. chrome://new-tab-page (NewTabPageHandler, NTP modules, doodle/promo, Customize Chrome wallpaper search,
+backdrop collections) is only reached by typing the URL; backdrop image fetches also need a user-chosen custom
+background, and NtpBackgroundService::FetchCollectionInfo is patched to return."""
+closes = '^ann:(new_tab_page_handler|wallpaper_search_handler_\w+|backdrop_\w+|ntp_image_url_verification|drive_service)$'
+source = "fable verifier batch4a 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["components/ntp_tiles/"]
+check = ["chrome/browser/ntp_tiles/chrome_most_visited_sites_factory.cc:bool ShouldCreatePopularSites(Profile* profile) {",
+         "components/ntp_tiles/most_visited_sites.cc:homepage_client_ &&  // No platform-specific implementation - no tile."]
+text = """Popular sites and large-icon fetches are Android-only: ShouldCreatePopularSites returns false on desktop
+(chrome_most_visited_sites_factory.cc) so PopularSitesImpl is never built and IconCacherImpl::StartFetchPopularSites
+is never called; StartFetchMostLikely (Google large icon server) needs the home tile, which needs a homepage_client_
+not supplied on desktop (most_visited_sites.cc)."""
+closes = '^(ann:(icon_cacher|icon_catcher_get_large_icon|popular_sites_fetch)|const:components/ntp_tiles/.*)$'
+source = "fable verifier batch4a 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["components/captive_portal/"]
+check = ["chrome/browser/net/profile_network_context_service.cc:registry->RegisterBooleanPref(embedder_support::kAlternateErrorPagesEnabled,",
+         "components/captive_portal/content/captive_portal_service.cc:resolve_errors_with_web_service_.GetValue();"]
+text = """Captive portal probes need embedder_support::kAlternateErrorPagesEnabled (CaptivePortalService::
+UpdateEnabledState), registered false by default in this build (profile_network_context_service.cc, ungoogled).
+CaptivePortalDetector is only driven by that service."""
+closes = '^(ann:captive_portal_service|const:components/captive_portal/.*)$'
+source = "fable verifier batch4a 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["net/proxy_resolution/", "components/proxy_config/"]
+check = ["chrome/browser/net/proxy_service_factory.cc:// base_service = net::ProxyConfigService::CreateSystemProxyConfigService(",
+         "components/proxy_config/pref_proxy_config_tracker_impl.cc:*effective_config = net::ProxyConfigWithAnnotation::CreateDirect();"]
+text = """Own patch os-dns-and-no-system-proxy: the system ProxyConfigService is not created (proxy_service_factory.cc);
+the kProxy pref defaults to 'system' and with CONFIG_UNSET the effective config is direct
+(pref_proxy_config_tracker_impl.cc GetEffectiveProxyConfig). WPAD and PAC fetches only happen after the user, a
+policy or the command line sets a proxy. ProxyResolverWinHttp is reachable only via CreateUsingSystemProxyResolver
+(cronet/iOS), not built."""
+closes = '^(ann:proxy_config_settings|const:net/proxy_resolution/.*|fn:net/proxy_resolution/win/.*)$'
+source = "fable verifier batch4a 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["chrome/browser/predictors/", "chrome/browser/navigation_predictor/"]
+check = ["chrome/browser/preloading/preloading_prefs.h:kDefault = kDisabled,",
+         "chrome/browser/predictors/loading_predictor_config.cc:prefetch::IsSomePreloadingEnabled(*profile->GetPrefs()) ==",
+         "chrome/browser/navigation_predictor/search_engine_preconnector.cc:// Don't preconnect unless the user allows search suggestions."]
+text = """NetworkPredictionOptions default is kDisabled (preloading_prefs.h), so IsPreconnectAllowed
+(loading_predictor_config.cc) is false and LoadingPredictor skips speculative preconnects and preresolves;
+SearchEnginePreconnector (kPreconnectToSearch on by default) also requires prefs::kSearchSuggestEnabled, false by
+default. Exception: NetworkHintsHandlerImpl (page <link rel=preconnect>) is not pref-gated but only runs during a
+page load the user started."""
+closes = '^ann:predictive_preconnect$'
+source = "fable verifier batch4a 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["chrome/browser/signin/bound_session_credentials/", "chrome/browser/preloading/prefetch/prefetch_service/",
+         "content/browser/preloading/prefetch/"]
+check = ["components/google/core/common/google_util.cc:bool IsGoogleDomainUrl(const GURL& url,",
+         "chrome/browser/signin/bound_session_credentials/bound_session_params_util.cc:if (!google_util::IsGoogleDomainUrl(site, google_util::ALLOW_SUBDOMAIN,",
+         "content/browser/preloading/prefetch/prefetch_service.cc:!delegate_->IsDomainInPrefetchAllowList(prefetch_container->request()",
+         "content/browser/preloading/prefetch/prefetch_params.cc:features::kPrefetchUseContentRefactor, \"allow_all_domains\","]
+text = """disable-google-host-detection patch: google_util::IsGoogleDomainUrl/IsYoutubeDomainUrl always return false.
+Device Bound Session Credentials registration and rotation reject every site (bound_session_params_util.cc) although
+kEnableBoundSessionCredentials is on for Windows. Proxy-required (anonymous-client-ip) speculation-rules prefetches
+are only eligible from a Google referring origin (prefetch_service.cc; allow_all_domains false, prefetch_params.cc),
+so the googlezip prefetch proxy, its DNS/TLS canary checks and origin probes never run."""
+closes = '^(ann:(device_bound_session_register|gaia_auth_rotate_bound_cookies|speculation_rules_prefetch_probe)|fn:chrome/browser/preloading/prefetch/prefetch_service/chrome_prefetch_service_delegate\.cc:.*)$'
+source = "fable verifier batch4b 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["components/lens/", "chrome/browser/ui/lens/", "components/omnibox/browser/aim_eligibility_service.cc",
+         "components/search_provider_logos/"]
+check = ["components/search_engines/template_url.cc:bool TemplateURLRef::HasGoogleBaseURLs(",
+         "components/search/search.cc:return TemplateURLIsGoogle(template_url_service->GetDefaultSearchProvider(),",
+         "components/omnibox/browser/aim_eligibility_service.cc:if (!search::DefaultSearchProviderIsGoogle(template_url_service)) {",
+         "chrome/browser/renderer_context_menu/render_view_context_menu.cc:if (!search::DefaultSearchProviderIsGoogle(GetProfile())) {"]
+text = """The default search engine is never Google: the nosearch patch removes the Google prepopulated engine and
+TemplateURLRef::HasGoogleBaseURLs is patched to return false, so search::DefaultSearchProviderIsGoogle() is false.
+Google-DSE-only mechanisms are dead: AIM eligibility requests (empty request URL in aim_eligibility_service.cc),
+NTP doodle/logo fetches (no doodle_url), Lens preparation/preconnect (render_view_context_menu.cc) and the Lens
+overlay entry points."""
+closes = '^(ann:(aim_eligibility_fetch|logo_service)|url:components/lens/lens_features\.cc:.*)$'
+source = "fable verifier batch4b 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["chrome/browser/web_applications/isolated_web_apps/", "components/webapps/isolated_web_apps/"]
+check = ["content/public/common/content_features.cc:BASE_FEATURE(kIsolatedWebApps,",
+         "chrome/browser/web_applications/isolated_web_apps/update/isolated_web_app_update_manager.cc:if (!content::AreIsolatedWebAppsEnabled(&*profile_)) {"]
+text = """Isolated Web Apps: kIsolatedWebApps is disabled by default outside ChromeOS (content_features.cc);
+IsolatedWebAppUpdateManager::Start returns immediately and the install/update paths that use UpdateManifestFetcher
+and BundleDownloader are unreachable."""
+closes = '^ann:(iwa_update_discovery_update_manifest|iwa_update_manifest_fetcher|iwa_bundle_downloader)$'
+source = "fable verifier batch4b 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["extensions/browser/updater/", "extensions/browser/cws_info_service.cc", "extensions/browser/install_signer.cc",
+         "extensions/browser/content_hash_fetcher.cc", "extensions/browser/content_verifier/"]
+check = ["extensions/browser/updater/extension_downloader.cc:AddToFetches(fetches_preparing, std::move(task));",
+         "extensions/browser/cws_info_service.cc:if (!google_apis::IsGoogleChromeAPIKeyUsed() &&",
+         "extensions/browser/install_verifier.cc:return VerifyStatus::NONE;",
+         "chrome/browser/extensions/chrome_content_verifier_delegate.cc:experiment_value = VerifyInfo::Mode::NONE;"]
+text = """Chrome Web Store backend contact is dead: the disable-webstore-urls patch removed the StartUpdateCheck loop from
+ExtensionDownloader::StartAllPending (prepared manifest fetches are dropped; GetWebstoreUpdateUrl() returns nullopt),
+CWSInfoService never schedules its 24h check without a Google API key (cws_info_service.cc), InstallVerifier status
+is NONE without GOOGLE_CHROME_BRANDING so InstallSigner never posts, and ContentVerifier mode is NONE without
+branding (chrome_content_verifier_delegate.cc) so content hashes are never fetched."""
+closes = '^ann:(content_hash_verification_job|cws_info_service|extension_install_signer|extension_manifest_fetcher|extension_crx_fetcher)$'
+source = "fable verifier batch4b 2026-11-09, needles re-checked"
+
+[[gate]]
+paths = ["components/skills/"]
+check = ["components/skills/internal/skills_fetcher.cc:.SetOAuthConsumerId(signin::OAuthConsumerId::kSkillsService)",
+         "components/skills/internal/enterprise_skills_provider.cc:pref_service_->GetList(prefs::kEnterprisePublishedSkills);"]
+text = """Skills: the first-party skills fetch goes through an OAuth EndpointFetcher (skills_fetcher.cc), which fails
+without a primary account (endpoint_fetcher.cc); enterprise skills (URLs and gstatic images) come only from the
+EnterprisePublishedSkills policy pref (enterprise_skills_provider.cc); no policies in this build.
+kInterceptedSkillsUrl is under kSkillsWebViewV2Enabled (disabled) and only matched."""
+closes = '^(ann:enterprise_skills_fetcher|url:components/skills/features\.cc:.*|const:components/skills/internal/enterprise_skills_provider\.cc:.*)$'
+source = "fable verifier batch4b 2026-11-09, needles re-checked"

@@ -1,0 +1,14 @@
+# Decisions on audit findings, keyed by candidate id (stable across versions).
+# report.py hides decided items unless their code changed (context_hash differs).
+#
+# status:
+#   patched        - disabled by a patch (give `patch`, path as in patches/series)
+#   accepted       - a background request we knowingly keep (give `note`)
+#   false_positive - the model was wrong (give `note`, helps tune the prompt)
+#
+# [[decision]]
+# id = "ann:example_annotation"
+# status = "patched"
+# patch = "patches/disable-example.patch"
+# context_hash = "0123456789abcdef"   # from findings; optional
+# note = "..."

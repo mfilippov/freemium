@@ -1,0 +1,243 @@
+# Hand-verified eval labels, keyed by candidate id (stable across versions).
+# answer: yes = sends a request without explicit user action in unpatched
+# Chromium (desktop, fresh profile, no API keys); no = does not.
+# Low-confidence rows are scored as unsure (excluded). eval.py uses these
+# labels instead of patch-adjacency guesses wherever present.
+
+[[label]]
+id = "ann:intranet_redirect_detector"
+answer = "no"
+confidence = "high"
+evidence = "IsEnabledByPolicy() gates FinishSleep (intranet_redirect_detector.cc:82,107); omnibox::GetInterceptionChecksBehavior defaults to DISABLE_FEATURE (components/omnibox/browser/intranet_redirector_state.cc:42)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:one_google_bar_service"
+answer = "yes"
+confidence = "high"
+evidence = "NTP untrusted_source.cc:174-215 calls one_google_bar_service_->Refresh() when NTP page loads; kNtpOneGoogleBar enabled by default on desktop (ntp_features.cc:177); unauthenticated google.com fetch"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "fn:chrome/browser/profile_resetter/profile_resetter.cc:ProfileResetter::ProfileResetter"
+answer = "no"
+confidence = "high"
+evidence = "Only constructed from reset_settings_handler.cc:102,294 (user opens settings reset); brandcode_ empty in non-branded build so BrandcodeConfigFetcher is never created (profile_resetter.cc:109-111)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "const:chrome/browser/profiles/profile_avatar_downloader.cc:kHighResAvatarDownloadUrlPrefix"
+answer = "no"
+confidence = "medium"
+evidence = "New profiles get placeholder avatar (profile_manager.cc:1279); DownloadHighResAvatarIfNeeded returns early for placeholder (profile_attributes_storage.cc:987); download only after user picks legacy avatar"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:profile_avatar"
+answer = "no"
+confidence = "medium"
+evidence = "Same path: ProfileAttributesStorage::DownloadAvatars at init (storage.cc:315) but placeholder index skipped (storage.cc:987); fresh profile uses placeholder (profile_manager.cc:1279)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "fn:chrome/browser/spellchecker/spellcheck_hunspell_dictionary.cc:SpellcheckHunspellDictionary::GetDictionaryURL"
+answer = "yes"
+confidence = "high"
+evidence = "SpellcheckService ctor migrates default kSpellCheckDictionary (IDS_SPELLCHECK_DICTIONARY) into list (spellcheck_service.cc:136-150); Load()->PlatformSupportsLanguageComplete(false)->Hunspell download on Linux"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:spellcheck_hunspell_dictionary"
+answer = "yes"
+confidence = "high"
+evidence = "Same: hunspell dictionary Load() at profile init; download when .bdic missing (spellcheck_hunspell_dictionary.cc:149-161,468-480); kSpellCheckEnable default true"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:affiliation_lookup_by_hash"
+answer = "no"
+confidence = "high"
+evidence = "HashAffiliationFetcher::IsFetchPossible() == google_apis::HasAPIKeyConfigured() (hash_affiliation_fetcher.cc:199-201); affiliation_backend.cc:405 bails; also needs saved credentials"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "const:components/autofill/core/browser/crowdsourcing/autofill_crowdsourcing_manager.cc:kDefaultAutofillServerURL"
+answer = "yes"
+confidence = "high"
+evidence = "IsEnabled() = valid URL && kAutofillServerCommunication (crowdsourcing_manager.cc:723-727), feature ENABLED_BY_DEFAULT (autofill_debug_features.cc:143); query sent on form parse; API key optional (:991)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:autofill_query"
+answer = "yes"
+confidence = "high"
+evidence = "Same: StartQueryRequest on every parsed form during navigation; no consent/key gate (autofill_crowdsourcing_manager.cc:723-731,991)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:captive_portal_service"
+answer = "yes"
+confidence = "medium"
+evidence = "enabled_ = kAlternateErrorPagesEnabled pref (captive_portal_service.cc:241), default true (profile_network_context_service.cc:651); CaptivePortalTabReloader 30s slow-SSL timer -> CheckForCaptivePortal (tab_reloader.cc:23,244-250)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "const:components/domain_reliability/google_configs.cc:kGoogleStandardCollectors"
+answer = "no"
+confidence = "high"
+evidence = "domain_reliability::ShouldCreateService requires IsMetricsAndCrashReportingEnabled (chrome/browser/domain_reliability/service_factory.cc:35); gate applied in profile_network_context_service.cc:1499"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "url:components/domain_reliability/google_configs.cc:https://"
+answer = "no"
+confidence = "high"
+evidence = "Same gate: enable_domain_reliability only when metrics consent (service_factory.cc:35; profile_network_context_service.cc:1499); metrics reporting off by default"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:domain_reliability_report_upload"
+answer = "no"
+confidence = "high"
+evidence = "Uploader only runs in a network context with enable_domain_reliability, which requires metrics consent (service_factory.cc:35; profile_network_context_service.cc:1499)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "const:components/google/core/common/google_util.cc:kGoogleHomepageURL"
+answer = "unsure"
+confidence = "low"
+evidence = "Constant is used directly as the OGB API base URL (one_google_bar_loader_impl.cc:317-322) fetched automatically on NTP open; also GoogleBaseURLValue (search_terms_data.cc:110). Borderline: a base-URL constant"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:metrics_report_uma"
+answer = "no"
+confidence = "high"
+evidence = "metrics->EnableReporting only when consent_given_ (metrics_services_manager.cc:268); UMA consent off by default in Chromium"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:metrics_report_private_metrics"
+answer = "no"
+confidence = "high"
+evidence = "dwa->EnableReporting requires consent_given_ && dwa_allowed (metrics_services_manager.cc:337-343); tied to UKM/UMA consent"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:metrics_report_ukm"
+answer = "no"
+confidence = "high"
+evidence = "ukm->EnableReporting only with consent (metrics_services_manager.cc:297); off by default"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:private_metrics_encryption_key"
+answer = "no"
+confidence = "high"
+evidence = "FetchDataUploadConfig only via DwaService::RefreshEncryptionPublicKey, called from BuildPrivateMetricReportAndStoreLog (dwa_service.cc:529,535) which needs recorder entries; recording enabled only with consent"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:network_time_component"
+answer = "yes"
+confidence = "high"
+evidence = "kNetworkTimeServiceQuerying ENABLED_BY_DEFAULT on non-CrOS/iOS (network_time_tracker.cc:77); kFetchBehavior default FETCHES_IN_BACKGROUND_AND_ON_DEMAND (:116-118); no key needed"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:optimization_guide_model_download"
+answer = "no"
+confidence = "high"
+evidence = "PredictionModelDownloadManager::ShouldFetchModels requires google_apis::HasAPIKeyConfigured (prediction_model_download_manager.cc:214-215) unless override switch"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:optimization_guide_model"
+answer = "no"
+confidence = "high"
+evidence = "Model fetch scheduled only if ShouldFetchModels (prediction_manager.cc:137-139,203), i.e. API key configured; no key in standard Chromium build"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:hintsfetcher_gethintsrequest"
+answer = "no"
+confidence = "high"
+evidence = "IsUserPermittedToFetchFromRemoteOptimizationGuide requires API key (optimization_guide_permissions_util.cc:49-51) and anonymous-data consent (:54); hints_manager.cc:870"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:ranker_url_fetcher"
+answer = "yes"
+confidence = "high"
+evidence = "TranslateRankerImpl ctor creates loader and calls NotifyOfRankerActivity (translate_ranker_impl.cc:152-159) -> StartLoadFromURL when uncached (ranker_model_loader_impl.cc:88-89); created per tab (chrome_translate_client.cc:263)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "const:components/translate/core/browser/translate_ranker_impl.cc:kDefaultTranslateRankerModelURL"
+answer = "yes"
+confidence = "high"
+evidence = "Default model URL for Aura (translate_ranker_impl.cc:83); kTranslateRankerQuery/Enforcement ENABLED_BY_DEFAULT (:92-93); fetched by ranker loader at first tab creation"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:translate_url_fetcher"
+answer = "yes"
+confidence = "medium"
+evidence = "TranslateLanguageList::GetSupportedLanguages -> RequestLanguageList (translate_language_list.cc:224-225) from TranslateUIDelegate ctor (translate_ui_delegate.cc:42) when translate bubble auto-shows on foreign page"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:update_client"
+answer = "yes"
+confidence = "high"
+evidence = "component_updater::RegisterComponentsForUpdate at startup (chrome_browser_main.cc:1959); no branding/consent gate; periodic update checks to update.googleapis.com"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:chrome_variations_service"
+answer = "no"
+confidence = "high"
+evidence = "IsFetchingEnabled() returns false in non-GOOGLE_CHROME_BRANDING builds unless --variations-server-url (variations_service.cc:278-293)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:extension_manifest_fetcher"
+answer = "unsure"
+confidence = "low"
+evidence = "ExtensionUpdater::Start -> CheckSoon at startup (extension_updater.cc:235) but fresh Chromium profile has no updatable extensions; no default_apps dir in tree; ExternalComponentLoader branded-only (:45)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:extension_crx_fetcher"
+answer = "unsure"
+confidence = "low"
+evidence = "Same as 29: CRX fetch only follows a manifest update for an installed extension; nothing installed by default in non-branded Chromium; becomes automatic after user installs any extension"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:gcm_checkin"
+answer = "no"
+confidence = "medium"
+evidence = "GCMClientImpl::OnLoadCompleted: DELAYED_START && !HasStandaloneRegisteredApp -> no checkin (gcm_client_impl.cc:288); IMMEDIATE_START only from Register etc. (push subscription / sync)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:gcm_connection_factory"
+answer = "no"
+confidence = "medium"
+evidence = "Connection started only after checkin (gcm_client_impl.cc:326-330), which fresh profile never reaches (gcm_client_impl.cc:288)"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "ann:gcm_registration"
+answer = "no"
+confidence = "medium"
+evidence = "RegistrationRequest only via GCMDriverDesktop::Register (gcm_driver_desktop.cc:842 etc.), triggered by push subscription or sync, both user/sign-in gated"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"
+
+[[label]]
+id = "fn:rlz/lib/financial_ping.cc:FinancialPing::PingServer"
+answer = "no"
+confidence = "high"
+evidence = "enable_rlz = is_chrome_branded && enable_rlz_support (rlz/buildflags/buildflags.gni:12); RLZ not compiled into non-branded Chromium"
+source = "Fable, verified in code against unpatched 157.0.8103.38 (2026-11-07)"

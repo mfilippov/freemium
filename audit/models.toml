@@ -1,0 +1,195 @@
+# Model profiles for llama-server. `python audit/serve.py <profile>` starts the
+# server; `python audit/triage.py --model <profile>` uses the matching request
+# parameters. Changing `file` or `request` invalidates cached verdicts.
+#
+# Paths are relative to MODELS_DIR (env, default ~/models). Downloads:
+#   hf download unsloth/Qwen3.6-35B-A3B-GGUF Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf --local-dir ~/models/Qwen3.6-35B-A3B
+#   hf download unsloth/Qwen3-Coder-Next-GGUF --include "UD-Q6_K_XL/*" --local-dir ~/models/Qwen3-Coder-Next
+#   hf download ggml-org/gpt-oss-120b-GGUF gpt-oss-120b-MXFP4.gguf --local-dir ~/models/gpt-oss-120b
+#   hf download unsloth/Qwen3.8-Flash-Next-GGUF --include "UD-Q4_K_XL/*" --local-dir ~/models/Qwen3.8-Flash-Next
+
+# Shared llama-server arguments. --fit offloads MoE experts to RAM as needed
+# for the 16 GB GPU. 8 slots x 12k context: the largest candidate is ~7k tokens
+# plus ~1k prompt; answers are short, so more slots means more throughput.
+[server]
+args = ["--fit", "on", "-c", "98304", "-np", "8", "-fa", "on", "--jinja",
+        "-b", "4096", "-ub", "2048", "--metrics", "--no-webui"]
+
+[profiles.qwen36-35b]
+file = "Qwen3.6-35B-A3B/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf"
+# q8 KV cache: q4 degrades the DeltaNet state on long contexts.
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.qwen36-35b-think]
+file = "Qwen3.6-35B-A3B/Qwen3.6-35B-A3B-UD-Q4_K_XL.gguf"
+# Unbounded thinking averaged ~2.2k tokens and 5x the time per item.
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--reasoning-budget", "1500"]
+request = { temperature = 0.6, top_p = 0.95, chat_template_kwargs = { enable_thinking = true } }
+
+[profiles.coder-next]
+file = "Qwen3-Coder-Next/UD-Q6_K_XL/Qwen3-Coder-Next-UD-Q6_K_XL-00001-of-00003.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0 }
+
+[profiles.gpt-oss-120b]
+file = "gpt-oss-120b/gpt-oss-120b-MXFP4.gguf"
+args = []
+request = { temperature = 0.0, reasoning_effort = "medium" }
+
+# 125B MoE, 6B active (+51B n-gram embeddings that offload well). Arch qwen4exp.
+[profiles.flash-next]
+file = "Qwen3.8-Flash-Next/UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.flash-next-low]
+file = "Qwen3.8-Flash-Next/UD-Q4_K_XL/Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--reasoning-budget", "1500"]
+request = { temperature = 1.0, top_p = 0.95, top_k = 20, reasoning_effort = "low" }
+
+# Gemma 4 QAT q4_0 (official Google GGUFs): small enough to stay in VRAM.
+[profiles.gemma4-26b]
+file = "gemma-4-26B-A4B/gemma-4-26B_q4_0-it.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0 }
+
+[profiles.gemma4-12b]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0 }
+
+[profiles.gemma4-e4b]
+file = "gemma-4-E4B/gemma-4-E4B_q4_0-it.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0 }
+
+# Same Gemma 4 models with thinking off: llama.cpp enables it by default for
+# the Gemma 4 template (~2k thinking tokens per answer).
+[profiles.gemma4-12b-nothink]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-26b-nothink]
+file = "gemma-4-26B-A4B/gemma-4-26B_q4_0-it.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0, chat_template_kwargs = { enable_thinking = false } }
+
+# Throughput test: shared KV pool lets 16 slots fit in VRAM (slots use ~4k of
+# their 12k limit on average). Later flags override [server] args.
+[profiles.gemma4-12b-nothink-np16]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "-np", "16", "-c", "131072", "--kv-unified",
+        "--kv-unified-per-slot", "12288"]
+request = { temperature = 0.0, chat_template_kwargs = { enable_thinking = false } }
+
+# Throughput experiments (llama-server samples all slots on ONE CPU thread over
+# Gemma's 262k vocabulary; the GPU waits). B: greedy-only chain, grammar kept.
+[profiles.gemma4-12b-nothink-greedy]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0"]
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+# C: sampling on the GPU; incompatible with grammar, so the JSON is validated
+# in triage.py and retried.
+[profiles.gemma4-12b-nothink-gpusample]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-12b-gpusample-np16]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "16", "-c", "98304",
+        "--kv-unified", "--kv-unified-per-slot", "12288"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-12b-gpusample-np24]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "24", "-c", "98304",
+        "--kv-unified", "--kv-unified-per-slot", "12288"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-12b-gpusample-np32]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "32", "-c", "98304",
+        "--kv-unified", "--kv-unified-per-slot", "12288"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-12b-gpusample-np12-split]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "12", "-c", "122880", "--no-kv-unified"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-12b-gpusample-np16-split]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "16", "-c", "163840", "--no-kv-unified"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+# Same KV budget as 8 x 12k, split into 12 x 8k. --fit off + -ngl 99: fail loudly
+# instead of silently moving layers to the CPU (that is what made 12/16 x 10k slow).
+[profiles.gemma4-12b-gpusample-np12-8k]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "12", "-c", "98304",
+        "--no-kv-unified", "--fit", "off", "-ngl", "99"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-12b-np12-nocache]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "12", "-c", "98304",
+        "--no-kv-unified", "--fit", "off", "-ngl", "99", "--cache-ram", "0"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-12b-np12-nocache-cp2]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "12", "-c", "98304",
+        "--no-kv-unified", "--fit", "off", "-ngl", "99", "--cache-ram", "0", "--ctx-checkpoints", "2"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+# --swa-full: prefix reuse without context checkpoints (no per-request state
+# copies to RAM on the server thread), at the cost of VRAM for the SWA layers.
+[profiles.gemma4-12b-np12-swafull]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "12", "-c", "98304",
+        "--no-kv-unified", "--fit", "off", "-ngl", "99", "--cache-ram", "0",
+        "--swa-full", "--ctx-checkpoints", "0"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+# === Production profile for the full run (tuned 2026-11-07, see README) ===
+# 12 slots x 8k fully on GPU, sampling on the GPU (no grammar; invalid JSON
+# falls back to a grammar request), no host prompt cache: 41 candidates/min,
+# vs 26/min with defaults. Candidates over ~8k tokens fail here and are
+# finished with gemma4-fast-wide (same request -> same cache key).
+[profiles.gemma4-fast]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "12", "-c", "98304",
+        "--no-kv-unified", "--fit", "off", "-ngl", "99", "--cache-ram", "0"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+[profiles.gemma4-fast-wide]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "8", "-c", "98304",
+        "--no-kv-unified", "--fit", "off", "-ngl", "99", "--cache-ram", "0"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = false } }
+
+# Second opinion with thinking, for the background_request findings only
+# (python audit/triage.py --model gemma4-think --candidates <flagged subset>).
+# ~2k thinking tokens per answer, hence 8 slots x 12k.
+[profiles.gemma4-think]
+file = "gemma-4-12B/gemma-4-12b-it-qat-q4_0.gguf"
+args = ["-ctk", "q8_0", "-ctv", "q8_0", "--backend-sampling", "-np", "8", "-c", "98304",
+        "--no-kv-unified", "--fit", "off", "-ngl", "99", "--cache-ram", "0"]
+grammar = false
+request = { temperature = 0.0, samplers = ["top_k"], top_k = 1, chat_template_kwargs = { enable_thinking = true } }

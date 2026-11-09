@@ -75,4 +75,6 @@ is not a candidate, so prefilter rules cannot silently drop real code.
   function (e.g. URL built from a pref) are only caught via their annotation.
 - Field trials and features toggled remotely are not evaluated per feature.
 - Verify with a runtime check: run the build with `--log-net-log=netlog.json`
-  in an idle profile and list contacted hosts.
+  in an idle profile and list contacted hosts with `netlog.py netlog.json`.
+  157.0.8103.38, 10 min idle, fresh profile: only `wpad` DNS lookups (Windows
+  proxy auto-detect, a system setting); after own/os-dns-and-no-system-proxy.patch: no hosts at all.

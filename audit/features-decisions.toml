@@ -1,0 +1,4352 @@
+# Decisions for features-track picks (audit/features.py report hides these).
+# patched: turned off by an own patch; accepted: already dead here; keep: stays on.
+
+[[decision]]
+id = "feat:kAILanguageModelOverrideConfiguration"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAIModelUnloadableProgress"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAIPageContentIncludePopupWindows"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAIPageContentMissingSubframesFailSilently"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAIRelaxUserActivationReqs"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAccessibilityManifestV3GoogleTts"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAccessibilityPdfOcrForSelectToSpeak"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAccountSettingContextKillSwitch"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kActorLogin"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kActorLoginMqlsLogging"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kActorLoginQualityLogs"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kActorLoginSyncsPasswordPermissions"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kActorObservePageContentDefault"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kActorObserveScreenshotDefault"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kActorPageToolTimeout"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kActorRecordInvocationSourceCompletionMetrics"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAdTagging"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAddWarningShownTSToClientSafeBrowsingReport"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimCoBrowseEligibilityCheckEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimEligibilityServiceDebounce"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimEligibilityServiceIdentityImprovements"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimFuseboxEligibilityCheckEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimServerEligibilityEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimServerEligibilityIncludeClientCountry"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimServerEligibilityIncludeClientLocale"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimServerEligibilitySendCoBrowseUserAgentSuffixEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimServerEligibilitySendFullVersionListEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimServerEligibilitySendSearchCapabilitiesHeaderEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimServerRequestOnIdentityChangeEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimServerRequestOnStartupEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimTriggeredThreadLinks"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimUrlNavigationFetchEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimUsePecApi"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAimUseSearchboxConfigIconIds"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAllowClientCertificateReportingForUsers"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAllowURNsInIframes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAlwaysUploadExtensionInfo"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAnchovyUseProdServer"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAndroidAppIntegrationModule"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAndroidEntraSSO"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAndroidTipsNotifications"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAnnotatedPageContentPDFTextExtraction"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAnnotatedPageContentWithAutofillAnnotations"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kApiEnterpriseReportingPrivateOnDataMaskingRulesTriggered"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kApiGlicPrivate"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAppStoreBilling"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kApplyGenAiPolicyDefaults"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillAiIgnoreGeoIp"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillAiImportConstraintsForSync"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillAiNewUpdatePrompt"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillAiOnlineModelToggleNewTitle"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillAiOrder"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillAiShipment"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillAiWalletPrivatePassesDeepLink"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillAtMemoryTriggerString"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableAiBasedAmountExtraction"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kAutofillEnableAmountExtraction"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableBuyNowPayLater"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableBuyNowPayLaterForExternallyLinked"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableBuyNowPayLaterForKlarna"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableBuyNowPayLaterSyncing"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableBuyNowPayLaterUpdatedSuggestionSecondLineString"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableCardBenefitsForBmo"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableFlatRateCardBenefitsBlocklist"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableFlatRateCardBenefitsFromCurinos"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableResurrectingPaymentsUsers"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillEnableWalletBranding"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillParseLegalMessageLines"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillServerCommunication"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillServerExperimentalSignatures"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillServerUploadMoreData"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillSmsOtpCrowdsourcingFetchFromGmscore"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillSyncEwalletAccounts"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillUploadThrottling"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kAutofillUseStructuralSignatureInsteadOfSecondary"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kBeaconLeakageLogging"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kBrowserLaunchMetadataReporting"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kBrowsingTopics"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kBuiltInAIEagerInit"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCacheAliasLoaderDryRunMode"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCacheZeroStateSuggestions"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kCastStreamingWinHardwareH264"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCctAutoTranslate"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kChatPreinstalledWebApp"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kChoiceScreenEligibilityCheckAccountCapabilities"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kChromeAndroidIdentitySurveyFirstRun"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeAndroidIdentitySurveyNtpAccountAvatarTap"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeAndroidIdentitySurveyNtpPromo"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeAndroidIdentitySurveyNtpSigninButton"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeAndroidIdentitySurveyWeb"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyAddressBubbleSignin"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyDiceWebSigninAccepted"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyDiceWebSigninDeclined"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyFirstRunSignin"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyLaunchWithDelay"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyPasswordBubbleSignin"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyProfileMenuDismissed"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyProfileMenuSignin"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveyProfilePickerAddProfileSignin"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveySigninInterceptProfileSeparation"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveySigninPromoBubbleDismissed"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveySwitchProfileFromProfileMenu"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeIdentitySurveySwitchProfileFromProfilePicker"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kChromeStructuredMetrics"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kChromeWebStoreNavigationThrottle"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kClankDefaultSearchApi"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kClearBrowsingHistoryJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kClearUndecryptablePasswords"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kClearUndecryptablePasswordsOnSync"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kClickInputTracker"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCloudSyncedFolderChecker"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCollaborationEntrepriseV2"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kComposeEligible"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kComposeGraduated"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kComposeHideComposeNudgesAsynchronously"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kComposeInnerText"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kComposeMqlsLogging"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kComposeRequestLatencyTimeout"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kComposeUpfrontInputModes"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kContentBindingVersioningEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextMenuSearchForVideoFrame"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualCueingV2AllowOverridingUcbScoring"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kContextualPageActions"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kContextualTasksContextLibrary"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksContextMenu"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksCustomNlmUi"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksDriveOAuthScope"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksEnableFileHint"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksHideMenuOnAiPage"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksLazyFetchClusterInfo"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksNonBlockingUrlNavigation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksSendContextualInputUploadType"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksSendFullVersionListEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksShowOnboardingTooltip"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kContextualTasksSuggestionsEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kContextualTasksWindowTracking"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kConversionMeasurement"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kCpssUseTfliteSignatureRunner"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCrOSDspBasedNsDeactivatedGroups"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCreateWarningShownClientSafeBrowsingReports"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCriticalUserJourneyService"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kCrossDeviceSignin"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCrossDeviceSigninFromDesktop"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kCustomizeChromeJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kCustomizeChromeWallpaperSearchInspirationCard"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDataControlsGlic"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kDataSharingAccountDataMigration"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDataTypeManagerImplCorrectActiveTypes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDefaultBrowserFramework"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kDemographicMetricsReporting"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDetectedAgentSignalCollectionEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAdsPanel"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiAssistanceAccessibilityAgent"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiAssistanceContextSelectionAgent"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiAssistanceFileAgent"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiAssistanceNetworkAgent"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiAssistancePerformanceAgent"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiAssistanceStorageAgent"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiCodeCompletion"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiCodeCompletionStyles"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiCodeGeneration"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiGeneratedTimelineLabels"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsAiOriginTrialsApis"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsConsoleInsights"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsFreestyler"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsGdpProfiles"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsGlobalAiButton"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDevToolsNewPermissionDialog"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDiceHeaderVersion2"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDisableNewTabZeroStateSuggestions"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kDisableSyncAutogeneratedSearchEngines"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDiscoFeedEndpoint"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDiscountDialogAutoPopupBehaviorSetting"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDrivePickerV2Scope"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kDurableMessages"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEmitWindowsParentalControlsHistograms"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableADPFRendererMain"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableAccountPreviewData"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableAccountPreviewEntityPreviews"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableAdditionalTextMetrics"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kEnableAwaitSyncServiceStartupOnHistorySync"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableBoundSessionCredentials"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableBoundSessionCredentialsContinuity"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableCompose"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kEnableComposeLanguageBypassForContextMenu"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kEnableComposeNudgeAtCursor"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kEnableComposeProactiveNudge"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kEnableComposeSavedStateNotification"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kEnableComposeSavedStateNudge"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kEnableCrossDevicePrefTracker"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableEncryptedTrackedPrefOnEnterprise"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableEtwExports"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableExtensionInstallPolicyFetching"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableForceDownloadToCloud"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableIframeForPix"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableManagementPromotionBanner"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableNewUploadSizeLimit"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableNtpBrowserPromos"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableOAuthMultiloginCookiesBinding"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableOAuthMultiloginCookiesBindingServerExperiment"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableOAuthMultiloginStandardCookiesBindingForSecondaryPartitions"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnablePreferencesAccountStorage"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableRendererNavigationTimeline"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableReregistration"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableRtcpReporting"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableSupervisedUserVersionSignOutDialog"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnableWatermarkTestPage"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEncryptedReportingPipeline"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnergyEffectAnimation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnergyEffectInNextbox"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnforceManagementDisclaimer"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnforcePrivacySandboxAttestations"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnhancedSafeBrowsingPromo"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnterpriseExtensionDOMActivityTelemetry"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnterpriseFileObfuscation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnterpriseFileObfuscationArchiveAnalyzer"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnterpriseGroupsExperiments"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEnterprisePublishedSkillsPolicyEnabled"
+decision = "patched"
+reason = "dead with SkillsEnabled off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kEnterpriseReleaseNotes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEsbAsASyncedSetting"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kEsbDownloadRowPromoFeature"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kExtensionTelemetrySearchHijackingSignal"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFacilitatedPaymentsEnableA2APayment"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFeedContainment"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFeedbackIncludeVariations"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFencedFrames"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFencedFramesCrossOriginAutomaticBeaconData"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFencedFramesCrossOriginEventReporting"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFencedFramesReportEventHeaderChanges"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFilterNavigationsBySyncSessionsClient"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFindsGraduated"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kFirstRunDesktopRefresh"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFirstRunDesktopRevampSound"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kForceMigrateSyncingUserToSignedIn"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFormsClassificationsMqlsLogging"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kFrameMetadataObserver"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kFrequentFeatureUserSegmentFeature"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGMSCoreEmoji"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGPayAppDynamicUpdate"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGeminiInChromeUsageReporting"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGenAiPolicyDefaultsUsePrefMap"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGetAIPageContentGetImageBytesTimeoutEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGetAIPageContentMainFrameTimeoutEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGetAIPageContentSubframeTimeoutEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGlic"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kGlicActionUseOptimizationGuide"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActor"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorApcComparison"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorAutofillPreClick"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorDaisyChainingFromFloatingUiDoesntClose"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorDomIdClicksOnZeroAreaTargets"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorEnableScriptTools"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorFixPageObservationCrash"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorIncrementalTyping"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorInternalPopups"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorIterativeInteractionPointDiscovery"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorMoveBeforeClick"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorOccludedDirectActivation"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorPermissionsAutoReject"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorSplitValidateAndExecute"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorTaskIconUseGlicButtonAltIconBackgroundColor"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorUi"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorUiMagicCursor"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorUiTabIndicatorSpinnerIgnoreReducedMotion"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorUiTaskIconUiFixes"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActorUiTaskListBubbleDelayShow"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicActuationPriorityVoter"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicAlwaysBindOnPin"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicAnchorEntryPointForOnboardedUsers"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicAppMenuNewBadge"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicAssetsV2"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicAttachNavigationThrottleToPausedTasks"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicAutoUnpinOnTabChangedOrigin"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicBindOnPinFromFloatingUiDoesntShowSidePanel"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicBindOnlyForDaisyChainingFromFloatingUi"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicBlockFileSystemAccessApiFilePicker"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicBlockNavigationToDangerousContentTypes"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicBlurredInactiveViewCard"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicBulkDataEntrySupport"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicCSPConfig"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicCaaGuestError"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicCaptureRegion"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicClearCookiesOnFirstSync"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicClearDeviceBoundSessionsOnFirstSync"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicClientDataStorage"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicClientResponsivenessCheck"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicConfirmTabClose"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicContentsInitiallyHidden"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicContextMenu"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicContextualCueV2ActiveUserBackoff"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicContextualCueingV2AutoSubmit"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicContextualCuesHandleEdu"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicContextualCuesHandleShopping"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicCookieSyncTimeout"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicCountryFiltering"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicCreateTabAdjacent"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicCrossOriginNavigationGating"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicDaisyChainNewTabs"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicDefaultContextPinOnBind"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicDefaultTabContextSetting"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicDeferActUntilUninterrupted"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicDeferDownloadFilePickerToUserTakeover"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicDisconnectedWebview"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicDragAndDropFileUpload"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicDragAndDropFileUploadAndroid"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicEarlyAddTaskTabs"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicExperimentalTriggeringOptInTabFocus"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicExperimentalTriggeringSuppressDoneNotification"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicExplicitBackgroundColor"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicExtensions"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicExternalProtocolActionResultCode"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicFixTimeToFirstQueryKillSwitch"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicFloatingUiReattachment"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicGeminiContinueURLRedirect"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicGetTabByIdApi"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicGetTabFaviconById"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicGuestInitialSize"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicHandoffButtonHideWhenModalUIShown"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicHandoffButtonHideWhenOmniboxPopupOpened"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicHandoffButtonResetFocusAndHoverStatus"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicHandoffButtonShowInImmersiveMode"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicHeader"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicHotkeyLocalScope"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicIgnoreOfflineState"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicInvoke"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicKeyboardShortcutNewBadge"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicLearnMoreURLConfig"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicLiveMode"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicLocaleFiltering"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicMarketingAutoOpen"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicMaxAwakeInstances"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicMaxInFlightRequests"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicMaxRecency"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicMetricsSession"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicMinorCountryFiltering"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicMultiInstance"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicMultitabUnderlines"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicNavigateToolUseOpaqueInitiator"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicNavigateUsingLoadURL"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicNavigateWithoutUserGesture"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicOSIconVariant"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicOpenContactInfoSettingsPageApi"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicOpenPasswordManagerSettingsPageApi"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicOptInDialogA11yFix"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicOptInImpressionMetrics"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicOrphanedReattachment"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicPageActivationGating"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicParameterizedShader"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicPasteEligibilityCheck"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicPopupWindowsEnabled"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicPrintMenuItem"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicRecordActorJournal"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicRecordMemoryFootprintMetrics"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicReloadAfterPerformActionsCrash"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicReloadWebContentsAfterExpiry"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicRemoveBlankInstancesOnClose"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicRemoveDaisyChainingWhenFreShowing"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicRetryFailedObservations"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicRollout"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicScrollTo"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicSelectionOverlayFullSizeScreenshot"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicSetAuthUser"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicSettingsA11yContextFix"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicShowForSignedOut"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicSkipAwaitVisualStateForNewTabs"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicSparkSettingsAccessibleLabels"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicStructuredYieldMetadata"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicSupportLinks"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicSuppressAnimationsOnDetach"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicTabFocusDataDedupDebounce"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicTieredRollout"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicURLConfig"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicUnpinOnUnbindIfUnused"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicUpdateHiddenScreenInfo"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicUseSessionCountryForFiltering"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicUseShaderCache"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicUserStatusCheck"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicUserStatusHandlesRefreshTokenLoss"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicWebActuationSetting"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicWebClientLoadTimes"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicWebClientUnresponsiveMetrics"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicWebContentsWarming"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicWebDragAndDropFileUpload"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGlicWebPasteEligibilityCheck"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kGmailOtpRetrievalService"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGmsCoreFailClosedOnPreciseLeak"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGoogleChromeScheme"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGooglePlayProtectInApkTelemetry"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kGoogleSearchAiModeWorkspace"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kHangoutsExtensionV3"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kHappinessTrackingSurveysConfiguration"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kHappinessTrackingSurveysForClearBrowsingHistory"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kHappinessTrackingSurveysForDesktopWhatsNew"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kHappinessTrackingSurveysForDownloadJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kHappinessTrackingSurveysForPinExtensionJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kHashPrefixRealTimeLookupsSamplePing"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kHeavyAdInterventionSendReportToEmbedder"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kHeavyAdInterventionWarning"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kHintsBatchUpdateForActiveTabsAndTopHosts"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kIOSDefaultBrowserPromoDefaultModel"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAdaptiveButtonPinGlicToolbarButtonFeature"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAimActivationHint"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAppRatingPromptFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAppSpecificHistory"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutoDarkOptOutFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutoDarkUserEducationMessageFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutoDarkUserEducationMessageOptInFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillAccountNameEmailSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillAiValuablesFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillBnplAffirmOrZipSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillBnplAffirmZipOrKlarnaSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillCardInfoRetrievalSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillCreditCardBenefitFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillDisabledVirtualCardSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillDownstreamCardAwarenessFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillEnableLoyaltyCardsFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillExternalAccountProfileSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillHomeWorkProfileSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillOmniboxPaymentChipFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillVirtualCardCVCSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillVirtualCardSuggestionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHAutofillWalletDirectOffersFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHBadgedReaderModeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHBatterySaverModeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHBookmarkBarSimplifiedFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHCCTHistory"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHCCTMinimized"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHCompanionSidePanelFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHCompanionSidePanelRegionSearchFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHContextualPageActionsActionChipFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHContextualPageActionsQuietVariantFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHContextualTasksEphemeralToolbarButtonFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHCriticalActionAppMenuFeature"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHCriticalActionFilterChipFeature"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDataSaverDetailFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDataSaverPreviewFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDefaultBrowserPromoMagicStackFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDefaultBrowserPromoMessagesFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDefaultBrowserPromoSettingCardFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDefaultSiteViewFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDesktopPWAsLinkCapturingLaunch"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDesktopPWAsLinkCapturingLaunchAppInTab"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDesktopRealboxContextualSearchFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDiscardRingFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDiscoverFeedHeaderFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDownloadEsbPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHDownloadPageFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHExplicitBrowserSigninPreferenceRememberedFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHExtensionsManageAppMenuFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHExtensionsManageToolbarFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHFeedHeaderMenuFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHFeedSwipeRefresh"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHFocusHelpBubbleScreenReaderPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHFuseboxAttachmentFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHGMCCastStartStopFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHGMCLocalMediaCastingFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHGMCSaveVideoFrameFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHGenericAlwaysTriggerHelpUiFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHGlicPromoAndroidFeature"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHGlicTrustFirstOnboardingShortcutSnoozePromoFeature"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHHomeCustomizationMenuFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHIOSPageActionMenu"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHIncognitoIndicatorCloseAllWindows"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHInstanceSwitcherFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHLauncherSearchHelpUiFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHLowUserEngagementDetectorFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHMemorySaverModeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHMenuAddToGroup"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHMostVisitedTilesCustomizationPinFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHNewTabPageThemeCustomizationFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPasswordSharingFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPasswordsManagementBubbleAfterSaveFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPasswordsManagementBubbleDuringSigninFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPasswordsSavePrimingPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPasswordsSaveRecoveryPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPasswordsWebAppProfileSwitchFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPdfGlicSummarizeFeature"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPdfInkSignaturesFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPdfPageDownloadFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPdfSearchifyFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPdfTextAnnotationsFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPerformanceInterventionDialogFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPreviewsOmniboxUIFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPriceInsightsPageActionIconLabelFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPriceNotificationsWhileBrowsingFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPriceTrackingEmailConsentFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPriceTrackingInSidePanelFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPriceTrackingPageActionIconLabelFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHProfileSwitchFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHPwaQuietNotificationFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadAloudExpandedPlayerFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadAloudPlaybackModeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadLaterAppMenuBookmarkThisPageFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadLaterAppMenuBookmarksFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadLaterBottomSheetFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReaderModeDistillInAppFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadingModeKeyboardShortcutFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadingModeLineFocusFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadingModePageActionLabelFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadingModePresentationModeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHReadingModeSidePanelFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHRecentTabsFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHRequestDesktopSiteDefaultOnFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHRequestDesktopSiteExceptionsGenericFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHRequestDesktopSiteWindowSettingFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHRestoreTabsOnFREFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHResumptionRailFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSharingHubWebnotesStylizeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHShoppingCollectionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHShoppingListMenuItemFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSideBySidePinnableFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSideBySideTabSwitchFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSidePanelContextualTasksPinnableFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSidePanelGenericPinnableFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSidePanelLensOverlayPinnableFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSidePanelLensOverlayPinnableFollowupFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSignInBenefitsNewSigninFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSplitViewHorizontalIndirectAccessFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHSupervisedUserProfileSigninFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupCreationDialogSyncTextFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupShareNoticeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupShareUpdateFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupShareVersionUpdateFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupSyncOnStripFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupsRemoteGroupFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupsSaveV2CloseGroupFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupsSaveV2IntroFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupsSurfaceFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabGroupsSurfaceOnHideFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabSearchComboButtonFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabSwitcherAddToGroup"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabSwitcherButtonFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabSwitcherXR"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTabTearingXR"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHTranslateMenuButtonFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHVerticalTabsExpandOnHoverFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHVerticalTabstripTutorialFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHWhatsNewFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHWhatsNewUpdatedFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPH_InterruptiveIphCooldownGroup"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSAIHubNewBadge"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSActiveDaysTrackingFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSAddressPromoDesktopFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSBackendPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSBackgroundNewBadge"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSContextualPanelPriceInsightsFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSContextualPanelSampleModelFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSDefaultBrowserBannerPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSDefaultBrowserOffCyclePromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSDockingPromoEligibilityFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSDockingPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSEnhancedBrowsingDesktopFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSFeedSwipeStaticFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSGeminiContextualCueChip"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSGeminiExternalAppStoreEvent"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSGeminiImageRemixFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSGeminiLiveIPHFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSGeminiLiveNewBadgeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSGeminiWhatCanGeminiDo"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSHistoryOnOverflowMenuFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSHomepageCustomizationNewBadge"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSHomepageLensNewBadge"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSInlineEnhancedSafeBrowsingPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSLensKeyboardFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSLensOverlayEntrypointTipFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSLensOverlayEscapeHatchTipFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSLensPromoDesktopFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSNewIAPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSOverflowMenuCustomizationFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPageInfoRevampFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPasswordPromoDesktopFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPaymentPromoDesktopFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPinMostVisitedSiteFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPostDefaultAbandonmentPromoFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPriceTrackingDesktopFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoAccountSwitchingFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoAllTabsFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoAppStoreFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoBackgroundCustomizationFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoContextualDefaultBrowserGeminiFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoCredentialProviderExtensionFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoEphemeralThemeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoGenericDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoLevelUpFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoMadeForIOSFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoNonModalAppSwitcherDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoNonModalShareDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoNonModalSigninBookmarkFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoNonModalSigninPasswordFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoNonModalUrlPasteDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoOverflowMenuDestinationDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoOverflowMenuShortcutsDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoPasswordManagerWidgetFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoPostRestoreDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoPostRestoreFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoSettingsCardDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoSettingsCellDefaultBrowserFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoSigninFullscreenFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoStaySafeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSPromoWhatsNewFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSReaderModeLargeOmniboxEntrypointFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSReaderModeOptionsFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSReminderNotificationsOverflowMenuBubbleFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSReminderNotificationsOverflowMenuNewBadgeFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSSafariImportFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSSavedTabGroupClosed"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSSettingsInOverflowMenuBubbleFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSSwitchAccountsWithNTPAccountParticleDiscFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSTabGroupsDesktopFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIPHiOSWelcomeBackFeature"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIncludeJSCallStackInExtensionApiRequest"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kIndigoGeneratedImageCache"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kIndigoWatermark"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kInstallPlatformExperienceHelperWin"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kInterestFeedV2"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kInterestGroupUpdateIfOlderThan"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kIsViewerGoogleSearchUrl"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kJourneysImages"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kKeepAliveReportBlockedByClient"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLazilySetCustomActionCaption"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLazyUpdateTranslateModel"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensBypassCompressionForC2pa"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensDeleteContextOnPageNavigation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensEnableWebpForImageUpload"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOnlySendAaiForModalityChips"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlay"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayContextualSearchbox"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayCornerSliders"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayEduActionChip"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayImageContextMenuActions"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayKeyboardSelection"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayNonBlockingPrivacyNotice"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayPermissionBubbleAlt"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayRoutingInfo"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayUploadChunking"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensOverlayVisualSelectionUpdates"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensSearchAimM3"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensSearchAimM3EnUs"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensSearchProtectedPage"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensSendRawFileMediaTypes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensSendUrlsInComposeboxes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensSendVitForSingleContextNextQueries"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensStandalone"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensUpdatedFeedbackEntrypoint"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensVideoCitations"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLensWakeHiddenTabForPageContentExtraction"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLightningTakeoverEdition"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLiveCaptionOnDeviceTranslation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLoadingPredictorUseOptimizationGuide"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLocalWebApprovals"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLogJsConsoleMessages"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kLoginDetection"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kMBIMode"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kManagedProfileRequiredInterstitial"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kMediaLinkEmbedHelper"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kMediaLinkHelpers"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kMerchantTrust"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kMetricsReportingFeature"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kMigrateOutOfSyncSetupIncompleteState"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kMigrateSyncingUserToSignedIn"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kMobilePromoOnDesktopRecordActiveDays"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kModelQualityLogging"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kNTPFooterBadgingPolicies"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNavigationPredictor"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNavigationPredictorNewViewportFeatures"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNewTabPageCustomizationV2"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kNonDefaultGaiaOriginCheck"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNonMilestoneUpdateToast"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kNotificationContentDetectionMqlsLogging"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kNotificationTelemetry"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpAnimatedCaret"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpAnimatedDoodles"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpComposebox"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpCustomizeChromeAutoOpen"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kNtpDriveModuleHistorySyncRequirement"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpModuleSignInRequirement"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpMostLikelyFaviconsFromServerFeature"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpNextFeatures"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpRealboxNext"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kNtpStarterChip"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOidcAuthProfileManagement"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceClusteringBlocklists"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceClusteringKeywordFiltering"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelCachesDiskSpaceCheck"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelConstrainedDecodingHint"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelCpuBackend"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelCpuImageInput"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelGpuAudioInput"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelGpuProgramCache"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelIdleTimeout"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelPerformanceParams"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelUsageTracking"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceModelValidation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOnDeviceWebSpeechSmallExpertModelMultiLanguage"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOneTimeTokenBackendNotification"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOpenDownloadInFilesAppIfNoHandlerFound"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOptimizationGuideFetchingForSRP"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOptimizationGuideManifestBroker"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kOptimizationGuideModelExecution"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kOutdatedBuildDetector"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPageContentExtractionAllowOnDemandWithoutObservers"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPageContentExtractionUsingPageSettledMonitor"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPageSpecificDataDialogRelatedInstalledAppsSection"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPageTextExtraction"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPaidContentMetricsObserver"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPassHistogramSharedMemoryOnLaunch"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPasswordChangeSubmissionMqlsLogging"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kPasswordManagerOnDeviceEncryptionMetricsReporter"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPdfInfoBar"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kPdfOopif"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPdfSaveToDrive"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPerProfileMetrics"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPermissionOnDeviceGeolocationPredictions"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPermissionOnDeviceNotificationPredictions"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPermissionPredictionsV2"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPermissionsAIP92"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPersistentHistogramsFeature"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPersonalContext"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kPhoneHubStructuredMetrics"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPinExtensionJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kPolicyDataCollectionEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPostFREFixMetricsReportingFeature"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPreinstalledBrowserTabWebAppsCaptureOnDefault"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPreinstalledWebAppInstallation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPreloadMediaEngagementData"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPreventLongRunningPredictionModels"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPriceTrackingSubscriptionServiceLocaleKey"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPrivacySandboxAdPrivacyUxDeprecation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kPrivacySandboxAdsAPIsM1Override"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kPrivateAi"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kPrivateAiServerAttestation"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kPrivateAiUseTokenAttestation"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kPrivateExecuteRequest"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kProfileCreationDeclineSigninCTAExperiment"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kProfileDiscOnAllPages"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kProfilePickerGaiaBlankContinueUrl"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kProfileSignalsReportingEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kRaiseMacHelpBubbleAboveMenus"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReadAnythingJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kReadingListEnableSyncTransportModeUponSignIn"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kRecordDiscardedFormsToModelQualityLogs"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kRecordMediaEngagementScores"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kRecordPasswordReadiness"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kRecordWebAudioEngagement"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kRegisterOsUpdateHandlerWin"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kRelaunchNotificationForAdvancedProtection"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kRenderSizeInScoreAdBrowserSignals"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReplaceSyncPromosWithSignInPromos"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReplaceSyncPromosWithSigninPromosNewSignin"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReportKeyCredentialManagerSupportWinFeature"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReportNotificationContentDetectionData"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReportUserNoisedUserBirthYearAndGender"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReporting"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReportingApiCorsOriginHeader"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kReportingApiEnableVariationsHeaders"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kResumeHeavyUserSegmentFeature"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kRetailCoupons"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSaasUsageReporting"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSafetyHub"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSafetyHubDisruptiveNotificationRevocation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSafetyHubExtensionsNoPrivacyPracticesTrigger"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSafetyHubThreeDotDetails"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSavePasswordHashFromProfilePicker"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kScanForOrphanedManifestAssets"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kScrollJankV4Metric"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSeaPenUseProdServer"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSearchAIModeSignInPromoSelfDismissal"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSearchNavigationPrefetch"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSearchPrefetchPreloadServingMetrics"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSearchPrefetchServicePrefetching"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSegmentationDefaultReportingSegments"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationDeviceCountByOsType"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformChromeUserEngagement"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformComposePromotion"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformCrossDeviceUser"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformDeviceTier"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformFeature"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kSegmentationPlatformFeedSegmentFeature"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformIntentionalUser"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformLowEngagementFeature"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformModelExecutionSampling"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformMostVisitedTilesUser"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformPasswordManagerUser"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformPowerUserFeature"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformSearchUser"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformTabletProductivityUser"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformUmaFromSqlDb"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationPlatformWriteUmaToSqlDb"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSegmentationSurveyPage"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSendTabToSelfEnhancedDesktopUI"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSendTabToSelfExtraEntryPoints"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSendTabToSelfPostSendToast"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSendTabToSelfPropagateFormFields"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSendTabToSelfRecordSnackbarActivation"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSeparateDefaultAndPinPrompt"
+decision = "patched"
+reason = "default browser prompt disabled (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSeparateLocalAndAccountSearchEngines"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSeparateLocalAndAccountThemes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSettingsGlowupJourneys"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kSharedStorageCreateWorkletCustomDataOrigin"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSharedStorageSelectURLSavedQueries"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSharingPostponeFcmMessageSending"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kShoppingUserSegmentFeature"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kShowContextualTasksMenuIcon"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSignInPromoMaterialNextUI"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSigninChromeSyncKeysUrlUsesAccountIndex"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSigninInterceptSimpleButtons"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSkillsEnabled"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kSkillsMetricsProviderEnabled"
+decision = "patched"
+reason = "dead with SkillsEnabled off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSkillsRefinementEnabled"
+decision = "patched"
+reason = "dead with SkillsEnabled off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSkillsServiceApi"
+decision = "patched"
+reason = "dead with SkillsEnabled off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSkillsSubheadersEnabled"
+decision = "patched"
+reason = "dead with SkillsEnabled off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSkipModelExecutionAllowedCheckForPasswordChange"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSkipRefreshTokenCheckInIdentityManager"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSmartRestartMetrics"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kStructuredMetrics"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSubSampleWindowProxyUsageMetrics"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSuggestionManageButtonSplitForEnhancedAutofill"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kSupportErrorsInProfilePicker"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSupportForcedSigninPolicy"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncCopyPreferencesToTransportModeOnServerForcedDisable"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncEnableBookmarksInTransportMode"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncEnableContactInfoDataTypeForCustomPassphraseUsers"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncEnableNewSyncDashboardUrl"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncFixWebSigninSessionDurationForShortLivedSessions"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncPopulateAllFieldsForCommitOnlyTypes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncPreferencesUseSelectedTypes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncReuploadBookmarks"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncSessionsUsePreferredDisplayName"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncUnsubscribeFromTypesWithPermanentErrors"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kSyncUploadAndroidBuildFingerprintPrefix"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kTabDuplicateMetrics"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kTabSearchJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kTcpPortReuseMetricsWin"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kTimeoutLocalMLModelDownloadInChangePasswordFormWaiter"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kToolbarGlicButtonResizing"
+decision = "patched"
+reason = "dead with Glic off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kTranslateRankerEnforcement"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kTranslateRankerQuery"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kTrustSafetySentimentSurveyV2"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kUkmAppLogging"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kUkmFeature"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kUnoPhase2FollowUp"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kUseDeviceBoundSessionsStorageMaskForDeletion"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kUsePortalAccentColor"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kViewDownloadedFileFromAppMenuJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kViewDownloadedFileJourney"
+decision = "accepted"
+reason = "HaTS needs metrics consent, off here (hats_service_desktop.cc CanShowAnySurvey)"
+
+[[decision]]
+id = "feat:kVisitedURLRankingDecorations"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kVisitedURLRankingSegmentationMetricsData"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kVoiceSearchCoherenceComposeboxes"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWalletApiPrivatePassesConsent"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWalletApiPrivatePassesEnabled"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWalletablePassSave"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWallpaperSearchGraduated"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kWallpaperSearchMqlsLogging"
+decision = "patched"
+reason = "dead with OptimizationGuideModelExecution off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kWebAppMigratePreinstalledChat"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWebAppsEnableMLModelForPromotion"
+decision = "patched"
+reason = "dead with SegmentationPlatform off (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kWebAuthnGpmPasskeyRecencyTolerance"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWebHistoryUseSpecificScope"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWebPaymentsJustInTimePaymentApp"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWebRTCLogUploadCrossSiteProductName"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWebRTCLogUploadSuffix"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWebUsbDeviceDetection"
+decision = "patched"
+reason = "own/disable-unwanted-features.patch: default off"
+
+[[decision]]
+id = "feat:kWebstoreHostedApp"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kWindowsIsPinnedToTaskbar3"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kZeroTrustDNS"
+decision = "keep"
+reason = "curated 2026-11-11 (Fable): dead in this build, not desktop, a fix/kill switch, web platform or local only"
+
+[[decision]]
+id = "feat:kiOSDefaultBrowserPromosGroup"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kiOSHomepageNewBadgesGroup"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kiOSNonModalSigninPromosGroup"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kiOSTailoredDefaultBrowserPromosGroup"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kiOSTailoredNonModalDefaultBrowserPromosGroup"
+decision = "patched"
+reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"

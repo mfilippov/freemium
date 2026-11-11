@@ -65,7 +65,8 @@ python audit/features.py report --model gemma4-fast
 
 Context per flag: definition, declaration comment, chrome://flags text, use
 sites. Decisions go to `features-decisions.toml`; flags to turn off go into
-one consolidated defaults patch.
+one consolidated defaults patch, `patches/own/disable-unwanted-features.patch`
+(157: 11 flags plus the IPH tracker and the default browser prompt).
 
 ## Choosing or changing a model or the prompt
 

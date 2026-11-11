@@ -1,0 +1,179 @@
+Turn off unwanted features enabled by default (from the audit features track,
+audit/features-decisions.toml).
+
+- AI: Glic (Gemini in Chrome, actor, contextual cueing), on-device and server
+  model execution (OptimizationGuideModelExecution), Skills.
+- Privacy Sandbox ad APIs: Topics, Attribution Reporting, the M1 ads APIs
+  override (fenced frames for ads). FLEDGE is already off by default; Shared
+  Storage and Private Aggregation no longer exist.
+- Nags: all in-product help bubbles (the feature_engagement tracker never
+  triggers), the default browser prompt and framework, the PDF default viewer
+  infobar, the non-milestone update toast, the WebUSB device-connected
+  notification.
+- Segmentation platform (on-device usage models that drive promos).
+--- a/chrome/common/chrome_features.cc
++++ b/chrome/common/chrome_features.cc
+@@ -529,14 +529,7 @@
+ // IMPORTANT: this feature should never be expired! It is used as the main
+ // kill-switch for Glic and can be used in the future to handle unsupported
+ // Chrome versions.
+-BASE_FEATURE(kGlic,
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \
+-    BUILDFLAG(IS_ANDROID)
+-             base::FEATURE_ENABLED_BY_DEFAULT
+-#else
+-             base::FEATURE_DISABLED_BY_DEFAULT
+-#endif
+-);
++BASE_FEATURE(kGlic, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ BASE_FEATURE(kGlicBackgroundActuation, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+--- a/components/optimization_guide/core/optimization_guide_features.cc
++++ b/components/optimization_guide/core/optimization_guide_features.cc
+@@ -98,7 +98,7 @@
+ 
+ // Whether to enable model execution.
+ BASE_FEATURE(kOptimizationGuideModelExecution,
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ // Whether the on device service is launched after a delay on startup to log
+ // metrics.
+--- a/components/skills/features.cc
++++ b/components/skills/features.cc
+@@ -7,13 +7,8 @@
+ 
+ namespace features {
+ 
+-BASE_FEATURE(kSkillsEnabled,
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS)
+-             base::FEATURE_ENABLED_BY_DEFAULT
+-#else
+-             base::FEATURE_DISABLED_BY_DEFAULT
+-#endif
+-);
++BASE_FEATURE(kSkillsEnabled, base::FEATURE_DISABLED_BY_DEFAULT);
++
+ BASE_FEATURE(kSkillsAndExtensionsAppMenu, base::FEATURE_DISABLED_BY_DEFAULT);
+ BASE_FEATURE(kSkillsMetricsProviderEnabled, base::FEATURE_ENABLED_BY_DEFAULT);
+ BASE_FEATURE(kSkillsRefinementEnabled, base::FEATURE_ENABLED_BY_DEFAULT);
+--- a/chrome/browser/default_browser/default_browser_features.cc
++++ b/chrome/browser/default_browser/default_browser_features.cc
+@@ -141,7 +141,7 @@
+ #endif
+ }
+ 
+-BASE_FEATURE(kDefaultBrowserFramework, base::FEATURE_ENABLED_BY_DEFAULT);
++BASE_FEATURE(kDefaultBrowserFramework, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ BASE_FEATURE(kDefaultBrowserPromptSurfaces, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+--- a/chrome/browser/ui/ui_features.cc
++++ b/chrome/browser/ui/ui_features.cc
+@@ -165,7 +165,7 @@
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
+ // Shows an infobar on PDFs offering to become the default PDF viewer if Chrome
+ // isn't the default already.
+-BASE_FEATURE(kPdfInfoBar, base::FEATURE_ENABLED_BY_DEFAULT);
++BASE_FEATURE(kPdfInfoBar, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ BASE_FEATURE(kSeparateDefaultAndPinPrompt,
+ #if BUILDFLAG(IS_WIN)
+@@ -378,7 +378,7 @@
+ 
+ BASE_FEATURE(kByDateHistoryInSidePanel, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+-BASE_FEATURE(kNonMilestoneUpdateToast, base::FEATURE_ENABLED_BY_DEFAULT);
++BASE_FEATURE(kNonMilestoneUpdateToast, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
+ BASE_FEATURE(kRespectShouldTriggerSessionRestoreOnDesktop,
+--- a/components/segmentation_platform/public/features.cc
++++ b/components/segmentation_platform/public/features.cc
+@@ -13,7 +13,7 @@
+ 
+ BASE_FEATURE(kSegmentationPlatformFeature,
+              "SegmentationPlatform",
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ BASE_FEATURE(kSegmentationPlatformUkmEngine,
+ 
+--- a/services/network/public/cpp/features.cc
++++ b/services/network/public/cpp/features.cc
+@@ -416,7 +416,7 @@
+ 
+ // https://github.com/patcg-individual-drafts/topics
+ // Kill switch for the Topics API.
+-BASE_FEATURE(kBrowsingTopics, base::FEATURE_ENABLED_BY_DEFAULT);
++BASE_FEATURE(kBrowsingTopics, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ 
+ BASE_FEATURE(kIncreaseCookieAccessCacheSize, base::FEATURE_ENABLED_BY_DEFAULT);
+--- a/components/attribution_reporting/features.cc
++++ b/components/attribution_reporting/features.cc
+@@ -9,6 +9,6 @@
+ namespace attribution_reporting::features {
+ 
+ // Controls whether the Conversion Measurement API infrastructure is enabled.
+-BASE_FEATURE(kConversionMeasurement, base::FEATURE_ENABLED_BY_DEFAULT);
++BASE_FEATURE(kConversionMeasurement, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ }  // namespace attribution_reporting::features
+--- a/content/common/features.cc
++++ b/content/common/features.cc
+@@ -615,7 +615,7 @@
+ // Enables exposure of the core milestone 1 (M1) APIs in the renderer without an
+ // origin trial token: Attribution Reporting, FLEDGE, Topics.
+ BASE_FEATURE(kPrivacySandboxAdsAPIsM1Override,
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ #if BUILDFLAG(IS_ANDROID)
+ // When disabled("legacy behavior") it resets ongoing gestures when window loses
+--- a/chrome/browser/browser_features.cc
++++ b/chrome/browser/browser_features.cc
+@@ -174,7 +174,7 @@
+ 
+ // Enables runtime detection of USB devices which provide a WebUSB landing page
+ // descriptor.
+-BASE_FEATURE(kWebUsbDeviceDetection, base::FEATURE_ENABLED_BY_DEFAULT);
++BASE_FEATURE(kWebUsbDeviceDetection, base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ #if BUILDFLAG(IS_WIN)
+ // Disable dynamic code using ACG. Prevents the browser process from generating
+--- a/components/feature_engagement/internal/tracker_impl.cc
++++ b/components/feature_engagement/internal/tracker_impl.cc
+@@ -340,6 +340,9 @@
+ 
+ TrackerImpl::TriggerDetails TrackerImpl::ShouldTriggerHelpUIWithSnooze(
+     const base::Feature& feature) {
++  if ((true)) {  // No in-product help.
++    return TriggerDetails(false, false);
++  }
+   if (session_controller_ && session_controller_->ShouldResetSession()) {
+     condition_validator_->ResetSession();
+   }
+@@ -402,6 +405,9 @@
+ }
+ 
+ bool TrackerImpl::WouldTriggerHelpUI(const base::Feature& feature) const {
++  if ((true)) {  // No in-product help.
++    return false;
++  }
+   if (session_controller_ && session_controller_->ShouldResetSession()) {
+     condition_validator_->ResetSession();
+   }
+--- a/chrome/browser/ui/startup/default_browser_prompt/default_browser_prompt.cc
++++ b/chrome/browser/ui/startup/default_browser_prompt/default_browser_prompt.cc
+@@ -80,6 +80,9 @@
+ 
+ void ShowDefaultBrowserPrompt(Profile* profile,
+                               base::OnceCallback<void(bool)> done_callback) {
++  if ((true)) {  // Never ask to become the default browser.
++    return;
++  }
+   // Do not check if Chrome is the default browser if there is a policy in
+   // control of this setting.
+   if (g_browser_process->local_state()->IsManagedPreference(

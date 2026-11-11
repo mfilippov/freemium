@@ -64,12 +64,32 @@ FEATURE_SCHEMA = {
     'additionalProperties': False,
 }
 
+PREF_CATEGORIES = ['network', 'telemetry', 'google_service', 'ai', 'signin_sync', 'promo',
+                   'privacy_tradeoff', 'privacy_security', 'ui', 'internal_state', 'other']
+PREF_SCHEMA = {
+    'type': 'object',
+    'properties': {
+        'analysis': {'type': 'string', 'maxLength': 600},
+        'category': {'enum': PREF_CATEGORIES},
+        'user_setting': {'enum': ['yes', 'no', 'unclear']},
+        'recommendation': {'enum': ['change', 'keep', 'ask', 'unclear']},
+        'proposed_default': {'type': 'string', 'maxLength': 60},
+        'reason': {'type': 'string', 'maxLength': 200},
+        'confidence': {'enum': ['low', 'medium', 'high']},
+    },
+    'required': ['analysis', 'category', 'user_setting', 'recommendation', 'proposed_default',
+                 'reason', 'confidence'],
+    'additionalProperties': False,
+}
+
 # Each track: its own prompt, answer schema, candidates and findings files.
 TRACKS = {
     'network': {'prompt': 'prompt.md', 'schema': SCHEMA, 'candidates': 'candidates.jsonl',
                 'out': '{model}.jsonl'},
     'features': {'prompt': 'prompt-features.md', 'schema': FEATURE_SCHEMA,
                  'candidates': 'features-candidates.jsonl', 'out': 'features-{model}.jsonl'},
+    'prefs': {'prompt': 'prompt-prefs.md', 'schema': PREF_SCHEMA,
+              'candidates': 'prefs-candidates.jsonl', 'out': 'prefs-{model}.jsonl'},
 }
 
 

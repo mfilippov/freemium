@@ -1077,6 +1077,21 @@ decision = "accepted"
 reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
 
 [[decision]]
+id = "pref:browser.enable_spellchecking"
+decision = "keep"
+reason = "local spellcheck (Windows native spellchecker); cloud spelling service is a separate pref, off"
+
+[[decision]]
+id = "pref:select_file_dialogs.allowed"
+decision = "keep"
+reason = "file open/save dialogs; needed for uploads and downloads"
+
+[[decision]]
+id = "pref:select_file_dialogs.allowed#2"
+decision = "keep"
+reason = "file open/save dialogs (second registration)"
+
+[[decision]]
 id = "pref:profile.add_person_enabled"
 decision = "patched"
 reason = "own/pref-defaults.patch (owner: one profile, no guest mode, avatar button hidden)"

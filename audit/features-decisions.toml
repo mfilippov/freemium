@@ -4350,3 +4350,18 @@ reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
 id = "feat:kiOSTailoredNonModalDefaultBrowserPromosGroup"
 decision = "patched"
 reason = "IPH tracker never triggers (own/disable-unwanted-features.patch)"
+
+[[decision]]
+id = "feat:kUniversalOptOut"
+decision = "keep"
+reason = "Global Privacy Control (Sec-GPC), enabled on purpose by own/pref-defaults.patch; not Privacy Sandbox"
+
+[[decision]]
+id = "feat:kUniversalOptOutSettings"
+decision = "keep"
+reason = "GPC setting in privacy settings, enabled on purpose by own/pref-defaults.patch"
+
+[[decision]]
+id = "feat:kAnnotatedPageContentNonSalientFiltering"
+decision = "keep"
+reason = "local filter of page content extraction (used by AI features, off here); not ad tracking"

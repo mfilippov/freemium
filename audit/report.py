@@ -90,10 +90,13 @@ def main():
     second = load_verdicts(opts.second, version, current) if opts.second else {}
     # Verifier verdicts (a stronger model checking each finding in code) count
     # only for unchanged code (the candidate's own code, not the context around
-    # it) and only with a cited gate when they clear an item.
-    verify_path = FINDINGS / version / 'verify.jsonl'
-    verified = {r['id']: r for r in (read_jsonl(verify_path) if verify_path.exists() else [])
-                if (r['id'], r.get('code_hash')) in current_code}
+    # it) and only with a cited gate when they clear an item. Verdicts of older
+    # versions carry over while the code is unchanged; newer versions win.
+    verified = {}
+    for verify_path in sorted(FINDINGS.glob('*/verify.jsonl'),
+                              key=lambda p: [int(x) for x in p.parent.name.split('.')]):
+        verified.update({r['id']: r for r in read_jsonl(verify_path)
+                         if (r['id'], r.get('code_hash')) in current_code})
     missing = len(current) - len(latest)
     decisions = load_decisions()
     current_ids = {i for i, _ in current}

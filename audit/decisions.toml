@@ -12,3 +12,8 @@
 # patch = "patches/disable-example.patch"
 # context_hash = "0123456789abcdef"   # from findings; optional
 # note = "..."
+
+[[decision]]
+id = "ann:ntp_custom_background"
+status = "accepted"
+note = "157.0.8103.78: fetches only a backdrop image the user picked (SetCustomBackgroundInfo with a valid backdrop URL) or the next image of a daily-refresh collection the user chose (OnNextCollectionImageAvailable); the collection list itself needs the Google NTP backend."

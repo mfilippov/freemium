@@ -1,7 +1,7 @@
 # Upstream patches: what we take and why
 
-Upstream: ungoogled-chromium 157.0.8103.38-1 (108 patches) and ungoogled-chromium-windows
-f85bc554 (26 patches). Pinned in `apply-patches.py` (SOURCES). Our series keeps upstream order.
+Upstream: ungoogled-chromium 157.0.8103.78-1 (108 patches) and ungoogled-chromium-windows
+20e9a348 (26 patches). Pinned in `apply-patches.py` (SOURCES). Our series keeps upstream order.
 
 Build goal: no network request without an explicit user action, no Google services, no
 telemetry. UI features and chrome://flags knobs are optional. GN args

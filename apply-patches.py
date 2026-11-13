@@ -21,16 +21,16 @@ import subprocess
 import sys
 from pathlib import Path
 
-CHROMIUM_TAG = '157.0.8103.38'
+CHROMIUM_TAG = '157.0.8103.78'
 
 # Upstream patch sources, referenced from series files as <name>/<path>.
 # ungoogled-chromium tag N-R targets Chromium tag N; platform repo commits
 # must be the ones updated to the same tag.
 SOURCES = {
     'ungoogled': ('https://github.com/ungoogled-software/ungoogled-chromium.git',
-                  '157.0.8103.38-1'),
+                  '157.0.8103.78-1'),
     'ungoogled-windows': ('https://github.com/ungoogled-software/ungoogled-chromium-windows.git',
-                          'f85bc55429c37b1c748b676b18fe79b38eee3207'),
+                          '20e9a348fc616bd73a366fbd5d8881613d6c5cb0'),
     # Lags behind: latest is for 156.0.8078.79, not CHROMIUM_TAG.
     'ungoogled-macos': ('https://github.com/ungoogled-software/ungoogled-chromium-macos.git',
                         '31f01756a43d55b2c4211e73ca329bfab4ebfcb2'),

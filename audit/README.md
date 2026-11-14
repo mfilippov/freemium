@@ -111,3 +111,10 @@ is not a candidate, so prefilter rules cannot silently drop real code.
   in an idle profile and list contacted hosts with `netlog.py netlog.json`.
   157.0.8103.38, 10 min idle, fresh profile: only `wpad` DNS lookups (Windows
   proxy auto-detect, a system setting); after own/os-dns-and-no-system-proxy.patch: no hosts at all.
+- Everyday use: `audit/netlog-browse.ps1` starts the build with a NetLog; use it as
+  usual for a day or two, close it and run `netlog.py` on the log. It lists hosts
+  with requests not made by pages (by traffic annotation; page loads, page
+  subresources, WebSockets, downloads, DevTools are not listed) and hosts only
+  resolved or connected to. Each listed item is either fixed in a patch or
+  recorded as accepted. Chosen instead of domain substitution: it checks all
+  hosts, not only Google's, and keeps help links and incremental builds working.

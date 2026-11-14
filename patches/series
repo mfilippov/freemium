@@ -104,3 +104,4 @@ ungoogled/extra/ungoogled-chromium/add-flag-to-hide-window-buttons.patch        
 own/os-dns-and-no-system-proxy.patch
 own/disable-unwanted-features.patch
 own/pref-defaults.patch
+own/remove-profile-and-password-ui.patch

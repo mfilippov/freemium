@@ -68,6 +68,22 @@ sites. Decisions go to `features-decisions.toml`; flags to turn off go into
 one consolidated defaults patch, `patches/own/disable-unwanted-features.patch`
 (157: 11 flags plus the IPH tracker and the default browser prompt).
 
+## Prefs track
+
+Default values of `Register{Boolean,Integer,Double}Pref` in built code under
+`chrome/` and `components/` (prompt `prompt-prefs.md`): "change" for defaults
+that send data, enable Google services, AI or promos; "ask" for
+privacy/convenience trade-offs the owner decides.
+
+```
+python audit/prefs.py extract
+python audit/triage.py --track prefs --model gemma4-fast
+python audit/prefs.py report --model gemma4-fast
+```
+
+Decisions go to `prefs-decisions.toml`; changes to
+`patches/own/pref-defaults.patch`.
+
 ## Choosing or changing a model or the prompt
 
 `eval.py build` labels candidates in the pristine tag: positives are code that

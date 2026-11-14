@@ -1,0 +1,1082 @@
+# Decisions for prefs-track picks (audit/prefs.py report hides these).
+# patched: changed by an own patch; accepted: no change needed here; keep: owner keeps the default.
+
+[[decision]]
+id = "pref:NewTabPage.ToolChipsVisible"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:auth.basic_over_http_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.at_memory.double_ctrl_trigger_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.autofill_ai.identity_entities_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.autofill_ai.private_inference_opt_in_status"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.autofill_ai.shopping_entities_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.autofill_ai.travel_entities_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.bnpl_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.credit_card_fido_auth_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.email_verification_enabled"
+decision = "patched"
+reason = "own/pref-defaults.patch"
+
+[[decision]]
+id = "pref:autofill.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.has_seen_iban"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.payment_card_benefits"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.payment_cvc_storage"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.payment_methods_mandatory_reauth"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.payment_methods_mandatory_reauth#2"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.payment_methods_mandatory_reauth#3"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.payment_methods_mandatory_reauth#4"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.personal_context.ambient_autofill_notice_should_be_shown"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.personal_context.at_memory_notice_should_be_shown"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.personal_context.settings_toggle_status"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.third_party_password_managers_allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.wallet_import_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:autofill.was_name_and_email_profile_used"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.close_tabs"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.close_tabs#2"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.form_data"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.hosted_apps_data"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.passwords"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.site_settings"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.skills"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.time_period"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.clear_data.time_period#2"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.dictation_onboarding_completed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.disk_cache_size"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.first_run_finished"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.hovercard.image_previews_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.promotions_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.relaunch_notification_period"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.show_update_promotion_info_bar"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.web_app.create_in_apps_menu"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.web_app.create_in_quick_launch_bar"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser.web_app.create_on_desktop"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser_labs_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:browser_switcher.keep_last_tab"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:chrome_for_testing.allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:chrome_labs_activation_threshold"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:component_updates.component_updates_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:compose.proactive_nudge_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:compose_has_completed_fre"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:contextual_search.search_content_sharing_settings"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:contextual_tasks.session_count_post_onboarding"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:contextual_tasks.smart_tab_sharing_settings"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:credentials_enable_automatic_passkey_upgrades"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:credentials_enable_autosignin"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:credentials_enable_passkeys"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:credentials_enable_service"
+decision = "keep"
+reason = "owner keeps the current default (Offer to save passwords typed into sites in the built-in (local, no sync) password manager.)"
+
+[[decision]]
+id = "pref:custom_handlers.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:custom_links.ai_mode_tile_index"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:custom_links.preinstalledremoved"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:default_search_provider.reset_occurred"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:devtools.availability"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:devtools.discover_tcp_targets"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:devtools.discover_usb_devices"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:devtools.gen_ai_settings"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:devtools.remote_debugging.allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:devtools.sync_preferences"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:disable_3d_apis"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:disable_screenshots"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:disable_screenshots#2"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:dom_distiller.links_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:domain_reliability.allowed_by_policy"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:download.open_pdf_in_system_reader"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:download.prompt_for_download"
+decision = "keep"
+reason = "owner keeps the current default (Ask where to save each file before downloading instead of saving silently to Downloads.)"
+
+[[decision]]
+id = "pref:enable_a_ping"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:enable_do_not_track"
+decision = "patched"
+reason = "own/pref-defaults.patch"
+
+[[decision]]
+id = "pref:enable_referrers"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:enable_referrers#2"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:enterprise.promotion_eligibility"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:extensions.disabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:extensions.review_prompts_allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:facilitated_payments.a2a_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:facilitated_payments.ewallet"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:facilitated_payments.ewallet_account_linking_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:facilitated_payments.pix"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:facilitated_payments.pix_account_linking_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:feature_notifications_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:feedback_allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:glic.default_tab_context_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:glic.file_upload_allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:glic.launcher_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:glic.launcher_enabled#2"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:glic.media_understanding_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:glic.partition_needs_cookie_sync"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:glic.pinned_to_tabstrip"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:has_dismissed_management_page_promotion_banner"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:has_dismissed_policy_page_promotion_banner"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:hide_web_store_icon"
+decision = "patched"
+reason = "own/pref-defaults.patch"
+
+[[decision]]
+id = "pref:history.saving_disabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:home.module.magic_stack.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:home.module.most_visited.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:home.module.price_tracking.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:home.module.safety_check.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:home.module.tab_resumption.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:home.module.tips.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:import_dialog_autofill_form_data"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:import_dialog_history"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:import_dialog_saved_passwords"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:import_dialog_search_engine"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:indigo.policy"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:installer_downloader.prevent_future_display"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:kDeprecatedDemographicsBirthYearOffsetPrefName"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:kEnableBenchmarkingPrefId"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:kEnableSyncConsent"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:kLensOverlaySettings"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:kNtpPromoPrefDisabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:media_router.enable_media_router"
+decision = "keep"
+reason = "owner keeps the current default (Cast support: sending tabs or media to Chromecast/DIAL devices on the local network.)"
+
+[[decision]]
+id = "pref:media_router.media_remoting.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:media_router.show_cast_sessions_started_by_other_devices.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:net.compression_dictionary_transport_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:net.network_prediction_options"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:net.quic_allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:network_time.network_time_queries_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:ntp.animated_doodles_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:ntp_footer.settings.management_notice"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:ntp_snippets.enable"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:ntp_snippets.list_visible"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:ntp_snippets_by_dse.enable"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.ai_mode_settings"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.dismissed_gemini_iph"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.dismissed_history_embeddings_scope_promo"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.dismissed_history_embeddings_settings_promo"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.dismissed_history_scope_promo"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.show_ai_mode_omnibox_button"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.show_google_lens_shortcut"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.show_search_tools"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox.third_party_ai_chat_settings"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox_everywhere.fre_dismissed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox_everywhere.fre_intro_dismissed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox_everywhere.fre_shortcut_reminder_dismissed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox_everywhere.fre_shortcut_setup_dismissed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:omnibox_everywhere.show_ai_mode"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:on_device_translation.translator_api_allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:optimization_guide.on_device_foundational_model_user_settings"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:password_manager.biometric_authentication_filling"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:password_manager.deleteting_undecryptable_passwords_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:password_manager.password_sharing_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:passwords_pref_with_new_label_used"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:performance_tuning.battery_saver_mode.state"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:performance_tuning.force_foreground_priority_for_all_tabs"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:platform_experience_helper.disable_notifications"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:plugins.always_open_pdf_externally"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.allow_back_forward_cache_for_cache_control_no_store_page_"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.back_forward_cache_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.back_forward_cache_for_web_sockets_allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.built_in_ai_apis_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.feedback_surveys_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.lens_camera_assisted_search_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.lens_desktop_ntp_search_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.lens_region_search_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:policy.read_aloud_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:preloading.prefetch_with_service_worker_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:privacy_guide.viewed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:privacy_sandbox.disabled_insufficient_confirmation"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:privacy_sandbox.first_party_sets_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:privacy_sandbox.m1.prompt_suppressed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:privacy_sandbox.no_confirmation_sandbox_disabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:privacy_sandbox.no_confirmation_sandbox_restricted"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:profile.auto_sign_in_enabled_gms"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:profile.browser_guest_enforced"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:profile.ephemeral_mode"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:profile.password_manager_leak_detection"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_address_opt_out"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_desktop_ntp_dismissed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_enhanced_browsing_opt_out"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_lens_opt_out"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_password_opt_out"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_payment_opt_out"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_price_tracking_opt_out"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_tab_groups_impressions_counter"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:promos.ios_tab_groups_opt_out"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:proxy.quick_check_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:restart.last.session.on.shutdown"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:session.restore_on_startup"
+decision = "patched"
+reason = "own/pref-defaults.patch"
+
+[[decision]]
+id = "pref:settings.a11y.overscroll_history_navigation"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:sharing_hub.desktop_sharing_hub_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:shopping_list_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:should_read_incoming_syncing_theme_prefs"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:should_show_price_track_fue_bubble_fue"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:side_panel.google_search_side_panel_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:side_search.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:signin.interception_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:skills.enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:ssl.error_override_allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:sync.all_os_types"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:sync.keep_everything_synced"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:system_notifications.allowed"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:tab_groups.deletion.skip_dialog_on_ungroup"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:tab_groups.editor_bubble.learn_more_footer_shown_count"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:total_passwords_available_for_profile"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:tracking_protection.tracking_protection_3pcd_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:translate_force_trigger_on_english_count_for_backoff_1"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:universal_optout.enabled"
+decision = "patched"
+reason = "own/pref-defaults.patch"
+
+[[decision]]
+id = "pref:user_experience_metrics.default_opt_in"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:user_experience_metrics.reporting_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:user_experience_metrics.stability.exited_cleanly"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:user_experience_metrics.use_post_fre_fix_sampling_trial"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:webauthn.create_in_icloud_keychain"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:webkit.webprefs.dom_paste_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:webkit.webprefs.encrypted_media_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:webkit.webprefs.force_enable_zoom"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:webkit.webprefs.javascript_can_access_clipboard"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:webkit.webprefs.loads_images_automatically"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:webkit.webprefs.password_echo_enabled_touch"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:worker.service_worker_auto_preload_enabled"
+decision = "accepted"
+reason = "curated 2026-11-12 (Fable): dead in this build, already private, internal state or taste"
+
+[[decision]]
+id = "pref:profile.add_person_enabled"
+decision = "patched"
+reason = "own/pref-defaults.patch (owner: one profile, no guest mode, avatar button hidden)"

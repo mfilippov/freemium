@@ -10,12 +10,14 @@ Usage (from the build env shell):
   python3 apply-patches.py --platform linux   - apply for another platform
   python3 apply-patches.py --reset            - revert files touched by a previous apply
   python3 apply-patches.py --args out/Release - write args.gn from args/common.gn + args/<platform>.gn
+  python3 apply-patches.py --args out/Arm64 --cpu arm64 - same, cross-compiling for another CPU
 
 The Chromium checkout must be at CHROMIUM_TAG (git checkout <tag> && gclient sync -D).
 """
 
 import argparse
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -193,10 +195,14 @@ def reset():
     print(f'Reverted {len(state["files"])} files.')
 
 
-def write_args(platform, out_dir):
+def write_args(platform, out_dir, cpu=None):
     args = ''
     for name in ('common.gn', f'{platform}.gn'):
         args += f'# --- args/{name}\n' + (ARGS / name).read_text(encoding='utf-8') + '\n'
+    if cpu:
+        args, n = re.subn(r'(?m)^target_cpu = ".*"$', f'target_cpu = "{cpu}"', args)
+        if n != 1:
+            sys.exit(f'expected one target_cpu line in args/{platform}.gn')
     out = SRC / out_dir
     out.mkdir(parents=True, exist_ok=True)
     (out / 'args.gn').write_text(args, encoding='utf-8')
@@ -210,11 +216,13 @@ def main():
     group = parser.add_mutually_exclusive_group()
     group.add_argument('--reset', action='store_true', help='revert previously applied patches')
     group.add_argument('--args', metavar='OUT_DIR', help='write args.gn into OUT_DIR')
+    parser.add_argument('--cpu', help='with --args: target_cpu instead of the platform default, '
+                                      'e.g. arm64')
     opts = parser.parse_args()
     if opts.reset:
         reset()
     elif opts.args:
-        write_args(opts.platform, opts.args)
+        write_args(opts.platform, opts.args, opts.cpu)
     else:
         apply(opts.platform)
 

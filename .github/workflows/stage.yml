@@ -1,0 +1,108 @@
+name: stage
+
+# One build stage on a GitHub-hosted Windows runner (ci/stage.py): restores the state the
+# previous stage saved, builds until the deadline and saves the state for the next stage, or
+# packs the zip and the PE files to sign when the build is done.
+
+on:
+  workflow_call:
+    inputs:
+      cpu:
+        type: string
+        required: true
+      stage:
+        type: number
+        required: true
+    outputs:
+      finished:
+        value: ${{ jobs.stage.outputs.finished }}
+      package:
+        value: ${{ jobs.stage.outputs.package }}
+      sha256:
+        value: ${{ jobs.stage.outputs.sha256 }}
+
+permissions: {}
+
+jobs:
+  stage:
+    name: ${{ inputs.cpu }} ${{ inputs.stage }}
+    runs-on: windows-2022
+    timeout-minutes: 355
+    permissions:
+      contents: read
+    outputs:
+      finished: ${{ steps.build.outputs.finished }}
+      package: ${{ steps.build.outputs.package }}
+      sha256: ${{ steps.build.outputs.sha256 }}
+    steps:
+      # Ninja is interrupted 4h45m after the job starts, which leaves ~1h for saving the
+      # state before the 6h job limit.
+      - id: deadline
+        shell: pwsh
+        run: '"at=$([DateTimeOffset]::UtcNow.ToUnixTimeSeconds() + 285 * 60)" >> $env:GITHUB_OUTPUT'
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: disk
+        shell: pwsh
+        run: Get-PSDrive -PSProvider FileSystem | Format-Table -AutoSize | Out-String -Width 200
+      # Chromium pins the SDK in build/toolchain/win/setup_toolchain.py (SDK_VERSION).
+      - name: Windows SDK 10.0.28000.0
+        shell: pwsh
+        run: |
+          if (Test-Path 'C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um') { exit 0 }
+          $installer = "$env:RUNNER_TEMP\winsdksetup.exe"
+          Invoke-WebRequest -Uri 'https://download.microsoft.com/download/38ab8f6d-3676-4860-ae84-3361308b9d7f/KIT_BUNDLE_WINDOWSSDK_MEDIACREATION/winsdksetup.exe' -OutFile $installer
+          $features = '/features OptionId.DesktopCPPx64 OptionId.DesktopCPPx86 OptionId.DesktopCPPArm64 OptionId.WindowsDesktopDebuggers /q /norestart /ceip off'
+          $proc = Start-Process -FilePath $installer -ArgumentList $features -PassThru -Wait
+          if ($proc.ExitCode -ne 0) { throw "winsdksetup.exe failed with code $($proc.ExitCode)" }
+          if (-not (Test-Path 'C:\Program Files (x86)\Windows Kits\10\Include\10.0.28000.0\um')) { throw 'SDK not installed' }
+      - if: inputs.stage > 1
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: state-${{ inputs.cpu }}
+          path: ${{ runner.temp }}/state
+      - name: restore state
+        if: inputs.stage > 1
+        shell: pwsh
+        run: |
+          7z x "$env:RUNNER_TEMP\state\state.7z" -o"$env:GITHUB_WORKSPACE" -y -bso0 -bsp0
+          if ($LASTEXITCODE -ne 0) { throw "7z failed: $LASTEXITCODE" }
+          Remove-Item -Recurse -Force "$env:RUNNER_TEMP\state"
+      - id: build
+        shell: pwsh
+        run: python ci/stage.py --cpu ${{ inputs.cpu }} --deadline ${{ steps.deadline.outputs.at }}
+      - name: disk
+        if: always()
+        shell: pwsh
+        run: Get-PSDrive -PSProvider FileSystem | Format-Table -AutoSize | Out-String -Width 200
+      # Everything ninja needs to continue; .git is not needed and depot_tools is cloned again.
+      - name: save state
+        if: steps.build.outputs.finished == 'false'
+        shell: pwsh
+        run: |
+          7z a -t7z -mx=1 -mmt=on '-xr!.git' -bso0 -bsp0 "$env:RUNNER_TEMP\state.7z" build\chromium build\ungoogled-chromium build\applied-patches.json
+          if ($LASTEXITCODE -ne 0) { throw "7z failed: $LASTEXITCODE" }
+          "state.7z: $([math]::Round((Get-Item "$env:RUNNER_TEMP\state.7z").Length / 1GB, 1)) GB" >> $env:GITHUB_STEP_SUMMARY
+      - if: steps.build.outputs.finished == 'false'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: state-${{ inputs.cpu }}
+          path: ${{ runner.temp }}/state.7z
+          overwrite: true
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
+      - if: steps.build.outputs.finished == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: package-${{ inputs.cpu }}
+          path: build/dist/${{ steps.build.outputs.package }}
+          compression-level: 0
+          if-no-files-found: error
+      - if: steps.build.outputs.finished == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: unsigned-${{ inputs.cpu }}
+          path: build/dist/unsigned/
+          if-no-files-found: error

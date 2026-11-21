@@ -1,0 +1,182 @@
+name: release
+
+# A v<Chromium version>-<n> tag builds x64 and arm64 on GitHub-hosted runners (build.yml, a
+# chain of stages), gets the PE files Authenticode-signed with the maintainer's YubiKey
+# (mfilippov/github-codesign), proves the signed files are exactly that build plus the
+# signature, and creates a draft release with build provenance for every published file.
+# v<Chromium version>-test.<n> runs the whole pipeline, signing included; delete its draft.
+#
+# Run by hand (workflow_dispatch) it only builds: no signing, no release.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      cpu:
+        description: CPUs to build
+        type: choice
+        default: both
+        options: [both, x64, arm64]
+
+permissions: {}
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: check tag
+        if: github.event_name == 'push'
+        run: |
+          ver=$(sed -n "s/^CHROMIUM_TAG = '\(.*\)'$/\1/p" apply-patches.py)
+          if [[ ! $GITHUB_REF_NAME =~ ^v${ver//./\\.}-(test\.)?[0-9]+$ ]]; then
+            echo "::error::tag $GITHUB_REF_NAME does not match Chromium $ver in apply-patches.py (expected v$ver-<n> or v$ver-test.<n>)"
+            exit 1
+          fi
+
+  x64:
+    needs: check
+    if: inputs.cpu != 'arm64'
+    uses: ./.github/workflows/build.yml
+    permissions:
+      contents: read
+    with:
+      cpu: x64
+
+  arm64:
+    needs: check
+    if: inputs.cpu != 'x64'
+    uses: ./.github/workflows/build.yml
+    permissions:
+      contents: read
+    with:
+      cpu: arm64
+
+  # Provenance for the files to sign: sign-pending refuses files not attested by this workflow,
+  # at this tag's commit, on a GitHub-hosted runner. Every job before this one is GitHub-hosted.
+  attest:
+    needs: [x64, arm64]
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: unsigned-*
+          path: unsigned
+          merge-multiple: true
+      - name: hashes
+        run: |
+          { echo '### Unsigned PE files'; echo '```'; (cd unsigned && find . -type f -print0 | sort -z | xargs -0 sha256sum); echo '```'; } >>"$GITHUB_STEP_SUMMARY"
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: |
+            unsigned/**/*.exe
+            unsigned/**/*.dll
+      # One artifact -> one signing request -> one PIN for both CPUs.
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: unsigned
+          path: unsigned/
+          if-no-files-found: error
+
+  sign:
+    needs: attest
+    runs-on: codesign
+    # Required reviewer + only v* tags; the job does not reach the runner before approval.
+    environment: codesign
+    timeout-minutes: 60
+    permissions: {}
+    steps:
+      - id: sign
+        uses: mfilippov/github-codesign/request-signature@7e672775e21df021ad0878d651157fbef9c302f3 # v1.0.5
+        with:
+          artifact: unsigned
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: signed
+          path: ${{ steps.sign.outputs.dir }}
+          if-no-files-found: error
+
+  release:
+    needs: [x64, arm64, sign]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: package-*
+          path: packages
+          merge-multiple: true
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with: { name: unsigned, path: unsigned }
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with: { name: signed, path: signed }
+      # Checks each unsigned file against this workflow's attestation for this commit, then
+      # that the signed one is it plus our signature.
+      - uses: mfilippov/github-codesign/verify-signed@7e672775e21df021ad0878d651157fbef9c302f3 # v1.0.5
+        with: { signed: signed, unsigned: unsigned }
+      - name: replace PE files with signed ones
+        env:
+          X64_PACKAGE: ${{ needs.x64.outputs.package }}
+          X64_SHA256: ${{ needs.x64.outputs.sha256 }}
+          ARM64_PACKAGE: ${{ needs.arm64.outputs.package }}
+          ARM64_SHA256: ${{ needs.arm64.outputs.sha256 }}
+        run: |
+          set -euo pipefail
+          mkdir release
+          overlay() {
+            local cpu=$1 package=$2 want=$3
+            # The codesign job could overwrite any artifact of this run; only the build job
+            # could set this hash.
+            if [[ $(sha256sum "packages/$package" | cut -d' ' -f1) != "$want" ]]; then
+              echo "::error::$package differs from the one the build produced"; exit 1
+            fi
+            unzip -q "packages/$package" -d "work/$cpu"
+            # Every file sent for signing must be a file of the package.
+            (cd "signed/$cpu" && find . -type f) | while read -r f; do
+              [[ -f "work/$cpu/$f" ]] || { echo "::error::$cpu: $f is not in $package"; exit 1; }
+            done
+            cp -r "signed/$cpu/." "work/$cpu/"
+            # Every PE file must now be signed: by us or, like D3DCompiler_47.dll, already.
+            if ! python3 ci/stage.py --list-unsigned "work/$cpu"; then
+              echo "::error::$cpu: unsigned PE files left"; exit 1
+            fi
+            (cd "work/$cpu" && zip -qrX "../../release/$package" .)
+          }
+          overlay x64 "$X64_PACKAGE" "$X64_SHA256"
+          overlay arm64 "$ARM64_PACKAGE" "$ARM64_SHA256"
+          (cd release && sha256sum -- *.zip >SHA256SUMS)
+          { echo '### Release files'; echo '```'; cat release/SHA256SUMS; echo '```'; } >>"$GITHUB_STEP_SUMMARY"
+      # Users can run `gh attestation verify <file> --repo <this repo>`.
+      - uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: |
+            release/*.zip
+            signed/**/*.exe
+            signed/**/*.dll
+      # Releases are immutable once published: a complete draft, published by hand after a look.
+      - name: draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" --draft --verify-tag --generate-notes \
+            --title "Chromium ${GITHUB_REF_NAME#v}" release/*
